@@ -2,14 +2,14 @@
 
 namespace App\Http\Repositories;
 use App\Http\Interfaces\CompanyInterface;
-use App\Models\Company;
+use App\Models\Article;
 
 class CompanyRepository implements CompanyInterface {
 
 
     private $companyModel;
 
-    public function __construct(Company $company){
+    public function __construct(Article $company){
         $this->companyModel = $company;
     }
 

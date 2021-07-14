@@ -3,7 +3,7 @@
 namespace App\Http\Repositories;
 
 use App\Http\Interfaces\EmployeeInterface;
-use App\Models\Company;
+use App\Models\Article;
 use App\Models\Employee;
 
 
@@ -12,7 +12,7 @@ class EmployeeRepository implements EmployeeInterface {
     private $employeeModel;
     private $companyModel;
 
-    public function __construct(Employee $employee, Company $company){
+    public function __construct(Employee $employee, Article $company){
         $this->employeeModel = $employee;
         $this->companyModel = $company;
     }

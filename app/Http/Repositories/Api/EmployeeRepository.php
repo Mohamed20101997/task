@@ -4,7 +4,7 @@ namespace App\Http\Repositories\Api;
 
 use App\Http\Interfaces\Api\EmployeeInterface;
 use App\Http\Traits\ApiDesignTrait;
-use App\Models\Company;
+use App\Models\Article;
 use App\Models\Employee;
 use Illuminate\Support\Facades\Validator;
 
@@ -16,7 +16,7 @@ class EmployeeRepository implements EmployeeInterface {
     private $employeeModel;
     private $companyModel;
 
-    public function __construct(Employee $employee, Company $company){
+    public function __construct(Employee $employee, Article $company){
         $this->employeeModel = $employee;
         $this->companyModel = $company;
     }

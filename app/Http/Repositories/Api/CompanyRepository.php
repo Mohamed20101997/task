@@ -3,7 +3,7 @@
 namespace App\Http\Repositories\Api;
 use App\Http\Interfaces\Api\CompanyInterface;
 use App\Http\Traits\ApiDesignTrait;
-use App\Models\Company;
+use App\Models\Article;
 use Illuminate\Support\Facades\Validator;
 
 class CompanyRepository implements CompanyInterface {
@@ -12,7 +12,7 @@ class CompanyRepository implements CompanyInterface {
 
     private $companyModel;
 
-    public function __construct(Company $company){
+    public function __construct(Article $company){
         $this->companyModel = $company;
     }
 
