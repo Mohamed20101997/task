@@ -7,17 +7,17 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    protected $namespace = 'App\Http\Controllers';
+    protected $namespace = 'App\Http\Controllers\Front';
     protected $dashboard_namespace = 'App\Http\Controllers\Dashboard';
     protected $api_namespace = 'App\Http\Controllers\Api';
 
 
     public const HOME = '/';
 
+
     public function boot()
     {
         //
-
         parent::boot();
     }
 
@@ -28,14 +28,23 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        $this->mapAdminRoutes();
+
     }
 
 
     protected function mapWebRoutes()
     {
         Route::middleware('web')
-            ->namespace($this->dashboard_namespace)
+            ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
+    }
+
+    protected function mapAdminRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->dashboard_namespace)
+            ->group(base_path('routes/admin.php'));
     }
 
 

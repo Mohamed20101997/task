@@ -14,14 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Auth::routes();
 
-Route::group(['middleware'=>'auth'], function () {
+    Route::group(['middleware'=>'auth'], function () {
 
-    Route::get('/','WelcomeController@index')->name('welcome');
+        Route::get('/logout',function(){
+            auth()->logout();
+            return redirect()->back();
+        })->name('logout');
 
-    Route::resource('company', 'CompanyController')->except('show');
+        Route::post('comment','FrontController@comment')->name('comment');
+    });  /** End of Route Group  */
 
-    Route::resource('employee', 'EmployeeController')->except('show');
 
-});  /** End of Route Group  */
+    Route::get('/','FrontController@home')->name('home');
+    Route::get('read/{id}','FrontController@read')->name('read');
+    Route::get('cat/{id}','FrontController@cat')->name('cat');
+    Auth::routes();
+
+

@@ -7,8 +7,9 @@
     </div>
   </div>
   <ul class="app-menu">
-  <li><a class="app-menu__item  {{\Request::route()->getName() == 'company.index' ? 'active' : ''}}" href="{{ route('company.index') }}"><i class="app-menu__icon fa fa-building"></i><span class="app-menu__label">Companies</span></a></li>
-  <li><a class="app-menu__item  {{\Request::route()->getName() == 'employee.index' ? 'active' : ''}}" href="{{ route('employee.index') }}"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Employees</span></a></li>
+
+  <li><a class="app-menu__item  {{\Request::route()->getName() == 'category.index' ? 'active' : ''}}" href="{{ route('category.index') }}"><i class="app-menu__icon fa fa-list-alt"></i><span class="app-menu__label">Categories</span></a></li>
+  <li><a class="app-menu__item  {{\Request::route()->getName() == 'article.index' ? 'active' : ''}}" href="{{ route('article.index') }}"><i class="app-menu__icon fa fa-newspaper-o"></i><span class="app-menu__label">Articles</span></a></li>
 
   </ul>
 </aside>

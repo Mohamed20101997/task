@@ -10,7 +10,7 @@ class Comment extends Model
     /**
      * @var string[]
      */
-    protected $fillable = [ 'user_id', 'article_id',];
+    protected $fillable = [ 'user_id', 'article_id','comment'];
 
     //Relations
 

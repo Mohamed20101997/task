@@ -31,7 +31,7 @@ function uploadImage($folder,$image){
 
 function remove_previous($folder,$model)
  {
-    Storage::disk($folder)->delete($model->logo);
+    Storage::disk($folder)->delete($model->image);
 
  } //end of remove_previous function
 

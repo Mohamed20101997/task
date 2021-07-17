@@ -1,19 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cd08c67c-590d-484b-971e-62799a4a6a17" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/AuthController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Interfaces/AuthInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Interfaces/FrontInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Repositories/AuthRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Repositories/FrontRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/ArticleUpdateRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard_files/plugins/tiny/tinymce.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front/assets/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/front/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/read.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/Api/CompanyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/Api/CompanyRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/Api/EmployeeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/Api/EmployeeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/CompanyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/CompanyRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/EmployeeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/EmployeeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Employee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/general.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/general.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CompanyController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/EmployeeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/Auth/ConfirmPasswordController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/Auth/ForgotPasswordController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/Auth/LoginController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/Auth/RegisterController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/Auth/ResetPasswordController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/Auth/VerificationController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/WelcomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/WelcomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Interfaces/Api/AuthInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Interfaces/Api/CompanyInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Interfaces/Api/EmployeeInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Interfaces/CompanyInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Interfaces/ArticleInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Interfaces/EmployeeInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Interfaces/CategoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/Api/AuthRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/Api/CompanyRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/Api/EmployeeRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/CompanyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/ArticleRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/EmployeeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/CategoryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CompanyRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ArticleRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/EmployeeRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CategoryRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServicesProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServicesProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_06_18_191330_create_companies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_06_18_191330_create_articles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_06_18_191434_create_employees_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_06_18_191329_create_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UserSeed.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AdminSeed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_06_18_191330_create_articles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_06_18_191330_create_articles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/companies/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/articles/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/companies/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/articles/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/companies/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/articles/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/employees/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/categories/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/employees/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/categories/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/employees/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/categories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/_header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +90,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/app/Http/Repositories/Api/CompanyRepository.php" root0="SKIP_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -143,6 +196,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1u8HWMrB6UPQW7QZGCjmMeQGnbD" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -152,20 +208,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Repositories/Api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/front" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\task\app\Http\Repositories\Api" />
-      <recent name="C:\laragon\www\task\app\Http\Controllers\Api" />
-      <recent name="C:\laragon\www\task\app\Http\Interfaces\Api" />
-      <recent name="C:\laragon\www\task\app\Http\Interfaces\EndUser" />
-      <recent name="C:\laragon\www\task\app\Http\Repositories\EndUser" />
+      <recent name="C:\laragon\www\task\resources\views\front" />
+      <recent name="C:\laragon\www\task\app\Http\Repositories" />
+      <recent name="C:\laragon\www\task\app\Http\Interfaces" />
+      <recent name="C:\laragon\www\task\public\front" />
+      <recent name="C:\laragon\www\task\app\Http\Requests" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\task\app\Http\Controllers\Front" />
+      <recent name="C:\laragon\www\task\resources\views\layouts" />
+      <recent name="C:\laragon\www\task\resources\views" />
       <recent name="C:\laragon\www\task\app\Http\Controllers\Dashboard" />
     </key>
   </component>
@@ -186,6 +245,12 @@
       <workItem from="1624040336355" duration="16383000" />
       <workItem from="1624101510309" duration="20346000" />
       <workItem from="1626205094797" duration="3838000" />
+      <workItem from="1626291211788" duration="5743000" />
+      <workItem from="1626346377682" duration="16493000" />
+      <workItem from="1626367231021" duration="851000" />
+      <workItem from="1626427367851" duration="8661000" />
+      <workItem from="1626456767987" duration="4774000" />
+      <workItem from="1626476781785" duration="8907000" />
     </task>
     <servers />
   </component>
@@ -202,5 +267,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

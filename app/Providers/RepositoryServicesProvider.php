@@ -13,34 +13,30 @@ class RepositoryServicesProvider extends ServiceProvider
      */
     public function register()
     {
+
         $this->app->bind(
-            'App\Http\Interfaces\CompanyInterface',
-            'App\Http\Repositories\CompanyRepository'
+            'App\Http\Interfaces\AuthInterface',
+            'App\Http\Repositories\AuthRepository'
         );
 
         $this->app->bind(
-            'App\Http\Interfaces\EmployeeInterface',
-            'App\Http\Repositories\EmployeeRepository'
-        );
-
-
-
-        // Api ////////////////////////
-
-        $this->app->bind(
-            'App\Http\Interfaces\Api\AuthInterface',
-            'App\Http\Repositories\Api\AuthRepository'
+            'App\Http\Interfaces\ArticleInterface',
+            'App\Http\Repositories\ArticleRepository'
         );
 
         $this->app->bind(
-            'App\Http\Interfaces\Api\EmployeeInterface',
-            'App\Http\Repositories\Api\EmployeeRepository'
+            'App\Http\Interfaces\CategoryInterface',
+            'App\Http\Repositories\CategoryRepository'
         );
 
-        $this->app->bind(
-            'App\Http\Interfaces\Api\CompanyInterface',
-            'App\Http\Repositories\Api\CompanyRepository'
+
+        //for EndUser
+      $this->app->bind(
+            'App\Http\Interfaces\FrontInterface',
+            'App\Http\Repositories\FrontRepository'
         );
+
+
 
     }
 
