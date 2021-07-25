@@ -8,6 +8,8 @@ for Run the Project
         : write your database name 
         : write php artisan key:generate 
         :       php artisan migrate --seed
+        :       php artisan cach:clear
+        :       php artisan config:cache
         :       php artisan serv
         
 1- Dashboard url: http://127.0.0.1:8000/admin/login
