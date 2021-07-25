@@ -5,7 +5,8 @@ for Run the Project
 - write : composer update
         : composer dump-autoload
         : Rename env folder from  [ .env.example ] to [ .env ] 
-        : write your database name 
+        : create new Database like [task]
+        : write your database name in .env file [DB_DATABASE=task] 
         : write php artisan key:generate 
         :       php artisan migrate --seed
         :       php artisan cach:clear
