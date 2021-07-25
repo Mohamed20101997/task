@@ -2,7 +2,7 @@ for Run the Project
 
 - make a Clone on Your server location like xampp->htdocs
 - 
-- write : composer install
+- write : composer update
         : composer dump-autoload
         : Rename env folder from  [ .env.example ] to [ .env ] 
         : write your database name 
