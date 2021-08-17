@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCommentToCommentsTable extends Migration
+class CreateSubscribesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AddCommentToCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::table('comments', function (Blueprint $table) {
-            $table->text('comment');
+        Schema::create('subscribes', function (Blueprint $table) {
+            $table->id();
+            $table->tinyInteger('term_and_condition');
+            $table->string('email');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ class AddCommentToCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::table('comments', function (Blueprint $table) {
-            $table->dropColumn('comment');
-        });
+        Schema::dropIfExists('subscribes');
     }
 }

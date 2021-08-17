@@ -23,6 +23,8 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin'], function () {
 
     Route::resource('category', 'CategoryController')->except('show');
 
+    Route::resource('tag', 'TagController')->except('show');
+
     Route::resource('article', 'ArticleController')->except('show');
 
 });  /** End of Route Group  */

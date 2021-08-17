@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Http\Interfaces\CategoryInterface;
 use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\CategoryUpdateRequest;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -33,7 +34,7 @@ class CategoryController extends Controller
         return $this->categoryInterface->store($request);
     }
 
-    public function update(CategoryRequest $request)
+    public function update(CategoryUpdateRequest $request)
     {
         return $this->categoryInterface->update($request);
     }

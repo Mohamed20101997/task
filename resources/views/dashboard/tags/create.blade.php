@@ -1,11 +1,11 @@
 @extends('layouts.dashboard.app')
 
 @section('content')
-<h1>Categories</h1>
+<h1>Tags</h1>
 
     <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('welcome') }}">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('category.index') }}">Categories</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('tag.index') }}">Tags</a></li>
         <li class="breadcrumb-item" active>Add</li>
     </ul>
 
@@ -14,7 +14,7 @@
     <div class="col-md-12">
 
         <div class="tile mb4">
-            <form method="POST" action="{{ route('category.store') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('tag.store') }}" enctype="multipart/form-data">
                 @csrf
                 @method('post')
                 <div class="row">
@@ -29,16 +29,6 @@
                         </div>
                     </div>{{-- end of col name --}}
 
-                    <div class="col-md-6">
-                        {{-- image --}}
-                        <div class="form-group">
-                            <label>Image</label>
-                            <input type="file" name="image" class="form-control">
-                            @error('image')
-                                <div class="text-danger">{{$message}}</div>
-                            @enderror
-                        </div>
-                    </div>{{-- end of col image --}}
 
                 </div> {{-- end of row --}}
                 <div class="form-group">

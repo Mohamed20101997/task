@@ -29,6 +29,10 @@ class RepositoryServicesProvider extends ServiceProvider
             'App\Http\Repositories\CategoryRepository'
         );
 
+        $this->app->bind(
+            'App\Http\Interfaces\TagInterface',
+            'App\Http\Repositories\TagRepository'
+        );
 
         //for EndUser
       $this->app->bind(

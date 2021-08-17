@@ -1,19 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Tag extends Model
 {
-    protected $fillable = ['name','image'];
 
-    //Start of Relations
-    public function articles(){
-        return $this->hasMany(Article::class, 'category_id','id');
-    }
-
-    //scope -----------------------------------
+    protected $fillable = ['name'];
 
     public function scopeWhenSearch($query , $search)
     {

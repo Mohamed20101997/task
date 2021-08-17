@@ -15,9 +15,14 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('name');
             $table->text('description');
             $table->string('image');
+
+            $table->integer('view')->nullable();
+
+            $table->bigInteger('admin_id')->unsigned();
+            $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
 
             $table->bigInteger('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
