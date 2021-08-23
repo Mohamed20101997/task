@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
 
- protected $fillable = ['title','description','image','category_id'];
+ protected $fillable = ['name','description','image','category_id','admin_id'];
 
   //Start of Relations
   public function category(){
@@ -32,9 +32,12 @@ class Article extends Model
                 return $qu->whereIn('category_id', (array)$category)
                     ->orWhereIn('name', (array)$category);
             });
-
         });
-
     } //scopeWhenCategory
 
+
+    public function tags(){
+
+      return $this->belongsToMany( Tag::class ,ArticleTags::class, 'article_id', 'tag_id');
+    }
 }

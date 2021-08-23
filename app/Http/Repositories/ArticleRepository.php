@@ -4,27 +4,21 @@ namespace App\Http\Repositories;
 use App\Http\Interfaces\ArticleInterface;
 use App\Models\Article;
 use App\Models\Category;
+use App\models\Tag;
 
 class ArticleRepository implements ArticleInterface {
 
 
-    /**
-     * @var Article $articleModel
-     */
     private $articleModel;
-    /**
-     * @var Category $categoryModel
-     */
-    private $categoryModel;
 
-    /**
-     * ArticleRepository constructor.
-     * @param Article $article
-     * @param Category $category
-     */
-    public function __construct(Article $article, Category $category){
+    private $categoryModel;
+    private $tagModel;
+
+
+    public function __construct(Article $article, Category $category, Tag $tag){
         $this->articleModel = $article;
         $this->categoryModel = $category;
+        $this->tagModel = $tag;
     }
 
 
@@ -41,7 +35,8 @@ class ArticleRepository implements ArticleInterface {
     public function create()
     {
         $categories = $this->categoryModel::get();
-        return view('dashboard.articles.create',compact('categories'));
+        $tags = $this->tagModel::get();
+        return view('dashboard.articles.create',compact('categories','tags'));
 
     } //end of create function
 
@@ -54,10 +49,14 @@ class ArticleRepository implements ArticleInterface {
             {
                 \Image::make($request->image)->save(storage_path('app/public/images/'. $request->image->hashName()));
                 $data['image'] = $request->image->hashName();
-
             }
 
-            $this->articleModel->create($data);
+            $data['admin_id'] = auth()->guard('admin')->user()->id;
+
+            $article = $this->articleModel->create($data);
+
+            $article->tags()->attach($request->tag_id);
+
             session()->flash('success', 'Article added successfully');
 
             return redirect()->route('article.index');
@@ -97,8 +96,11 @@ class ArticleRepository implements ArticleInterface {
 
             } //end of if
 
+            $data['admin_id'] = auth()->guard('admin')->user()->id;
 
             $article->update($data);
+            $article->tags()->sync($request->tag_id);
+
             session()->flash('success', 'Article Updated successfully');
 
             return redirect()->route('article.index');

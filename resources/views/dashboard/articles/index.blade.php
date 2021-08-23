@@ -50,6 +50,7 @@
                                     <th>Title</th>
                                     <th>category</th>
                                     <th>Image</th>
+                                    <th>Type</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -58,10 +59,19 @@
                                 @foreach ($articles as $index=>$article)
                                     <tr>
                                         <td>{{ $index+1 }}</td>
-                                        <td>{{ $article->title }}</td>
+                                        <td>{{ $article->name }}</td>
                                         <td>{{ $article->category->name }}</td>
                                         <td>
                                             <img src="{{image_path($article->image)}}" id="blah" width="50px" alt="your image" height="50px">
+                                        </td>
+
+                                        <td>
+                                            <select name="type" class="form-control">
+                                                <option value="">All Types</option>
+                                                    <option value="1" >Recent</option>
+                                                    <option value="2"> Feature</option>
+                                                    <option value="3"> Trending</option>
+                                            </select>
                                         </td>
                                         <td>
                                             <a href="{{ route('article.edit', $article->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i>Edit</a>

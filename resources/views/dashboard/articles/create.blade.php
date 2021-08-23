@@ -19,15 +19,15 @@
                 @method('post')
                 <div class="row">
                     <div class="col-md-4">
-                        {{-- title --}}
+                        {{-- name --}}
                         <div class="form-group">
                             <label>Title</label>
-                            <input type="text" name="title" class="form-control" value="{{ old('title') }}">
-                            @error('title')
+                            <input type="text" name="name" class="form-control" value="{{ old('name') }}">
+                            @error('name')
                                 <div class="text-danger">{{$message}}</div>
                             @enderror
                         </div>
-                    </div>{{-- end of col title --}}
+                    </div>{{-- end of col name --}}
 
                     <div class="col-md-4">
                         {{-- category --}}
@@ -59,14 +59,30 @@
                 </div> {{-- end of row --}}
 
                 <div class="row">
+                    {{-- Tags  --}}
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Tags</label>
+                            <select name="tag_id[]" class="form-control select2" multiple>
+                                @foreach ($tags as $tag)
+                                    <option {{ (collect(old('tag_id'))->contains($tag->id)) ? 'selected':'' }}  value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('tag_id')
+                            <div class="text-danger">{{$message}}</div>
+                            @enderror
+                        </div>
+                    </div>{{-- end of col Tags --}}
+
+                </div>
+
+                <div class="row">
 
                     <div class="col-md-12">
                         {{-- Description --}}
                         <div class="form-group">
                             <label>Description</label>
-
-                            <textarea  class="form-control" name="description" rows="4" cols="50"> {!! old('description') !!} </textarea>
-
+                            <textarea id="summernote" class="form-control" name="description" rows="50" cols="50"> {!! old('description') !!} </textarea>
                             @error('description')
                                 <div class="text-danger">{{$message}}</div>
                             @enderror

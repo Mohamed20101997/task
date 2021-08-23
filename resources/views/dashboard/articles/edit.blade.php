@@ -23,7 +23,7 @@
                             {{-- title --}}
                             <div class="form-group">
                                 <label>Title</label>
-                                <input type="text" name="title" class="form-control" value="{{ old('title', $article->title) }}">
+                                <input type="text" name="title" class="form-control" value="{{ old('title', $article->name) }}">
                                 @error('title')
                                 <div class="text-danger">{{$message}}</div>
                                 @enderror
@@ -66,7 +66,7 @@
                             <div class="form-group">
                                 <label>Description</label>
 
-                                <textarea class="form-control" name="description" rows="4" cols="50"> {!! old('description',$article->description) !!} </textarea>
+                                <textarea id="summernote" class="form-control" name="description"> {!! old('description',$article->description) !!} </textarea>
 
                                 @error('description')
                                 <div class="text-danger">{{$message}}</div>
