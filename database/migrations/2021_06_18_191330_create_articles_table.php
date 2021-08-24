@@ -27,6 +27,9 @@ class CreateArticlesTable extends Migration
             $table->bigInteger('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 
+            $table->bigInteger('type_id')->unsigned();
+            $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

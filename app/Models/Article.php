@@ -7,11 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
 
- protected $fillable = ['name','description','image','category_id','admin_id'];
+ protected $fillable = ['name','description','image','category_id','admin_id','type_id'];
 
   //Start of Relations
   public function category(){
       return $this->belongsTo(Category::class, 'category_id','id');
+  }
+
+  //Start of Relations
+  public function type(){
+      return $this->belongsTo(Type::class, 'type_id','id');
   }
 
 

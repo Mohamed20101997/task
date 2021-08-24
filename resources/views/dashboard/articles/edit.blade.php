@@ -19,7 +19,7 @@
                     @method('put')
                     <input name="id" value="{{$article->id}}" type="hidden">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             {{-- title --}}
                             <div class="form-group">
                                 <label>Title</label>
@@ -30,7 +30,7 @@
                             </div>
                         </div>{{-- end of col title --}}
 
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             {{-- category --}}
                             <div class="form-group">
                                 <label>Category</label>
@@ -44,8 +44,22 @@
                                 @enderror
                             </div>
                         </div> {{-- end of col category--}}
-
-                        <div class="col-md-4">
+                        <div class="col-md-3">
+                        {{-- type --}}
+                        <div class="form-group">
+                            <label>types</label>
+                            <select name="type_id" class="form-control select2">
+                                <option value="">Choose Type</option>
+                                @foreach ($types as $type)
+                                    <option {{ old('type_id',$article_type_id) == $type->id ? "selected" : "" }}  value="{{ $type->id }}">{{ $type->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('type_id')
+                            <div class="text-danger">{{$message}}</div>
+                            @enderror
+                            </div>
+                        </div> {{-- end of col type--}}
+                        <div class="col-md-3">
                             {{-- image --}}
                             <div class="form-group">
                                 <label>Image</label>

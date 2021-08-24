@@ -4,7 +4,8 @@ namespace App\Http\Repositories;
 use App\Http\Interfaces\ArticleInterface;
 use App\Models\Article;
 use App\Models\Category;
-use App\models\Tag;
+use App\Models\Tag;
+use App\Models\Type;
 
 class ArticleRepository implements ArticleInterface {
 
@@ -13,21 +14,24 @@ class ArticleRepository implements ArticleInterface {
 
     private $categoryModel;
     private $tagModel;
+    private $typeModel;
 
 
-    public function __construct(Article $article, Category $category, Tag $tag){
+    public function __construct(Article $article, Category $category, Tag $tag , Type $type){
         $this->articleModel = $article;
         $this->categoryModel = $category;
         $this->tagModel = $tag;
+        $this->typeModel = $type;
     }
 
 
     public function index()
     {
-        $articles = $this->articleModel::with('category')
+        $articles = $this->articleModel::with('category','type')
             ->whenSearch(request()->search)
             ->whenCategory(request()->category)->paginate(5);
-        $categories = $this->categoryModel::get();
+            $categories = $this->categoryModel::get();
+
         return view('dashboard.articles.index',compact('articles','categories'));
 
     }//end of index function
@@ -36,7 +40,8 @@ class ArticleRepository implements ArticleInterface {
     {
         $categories = $this->categoryModel::get();
         $tags = $this->tagModel::get();
-        return view('dashboard.articles.create',compact('categories','tags'));
+        $types = $this->typeModel::get();
+        return view('dashboard.articles.create',compact('categories','tags','types'));
 
     } //end of create function
 
@@ -71,9 +76,11 @@ class ArticleRepository implements ArticleInterface {
     {
         $article = $this->articleModel::find($id);
         $categories = $this->categoryModel::get();
+        $types= $this->typeModel::get();
+
 
         if($article){
-            return view('dashboard.articles.edit', compact('article','categories'));
+            return view('dashboard.articles.edit', compact('article','categories','types'));
         }else{
             return redirect()->back()->with(['error'=>'this article is not found']);
         }

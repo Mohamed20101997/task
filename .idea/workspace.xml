@@ -5,18 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd08c67c-590d-484b-971e-62799a4a6a17" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/seeds/TypeSeed.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Repositories/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/ArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ArticleRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ArticleRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Type.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Type.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_06_18_191330_create_articles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_06_18_191330_create_articles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_08_17_195236_create_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_18_191328_create_types_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_08_17_195312_create_tags_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_08_17_195312_create_tags_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_08_17_195512_create_article_tags_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_08_17_195512_create_article_tags_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/TypeSeed.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/articles/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/articles/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/articles/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/articles/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/articles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/articles/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/partials/_confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/_confirm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,11 +170,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\analog\database\seeds" />
       <recent name="C:\laragon\www\analog\resources\views\dashboard" />
       <recent name="C:\laragon\www\analog\app\Http\Requests" />
       <recent name="C:\laragon\www\analog\app\Http\Repositories" />
       <recent name="C:\laragon\www\analog\app\Http\Interfaces" />
-      <recent name="C:\laragon\www\analog\app\Http\Controllers\Dashboard" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\analog\app\Models" />
@@ -210,7 +211,7 @@
       <workItem from="1629227370489" duration="9268000" />
       <workItem from="1629321491002" duration="4462000" />
       <workItem from="1629661062692" duration="6624000" />
-      <workItem from="1629751515804" duration="1586000" />
+      <workItem from="1629751515804" duration="5393000" />
     </task>
     <servers />
   </component>

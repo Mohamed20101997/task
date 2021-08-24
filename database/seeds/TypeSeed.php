@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Type;
 use Illuminate\Database\Seeder;
 
 class TypeSeed extends Seeder
@@ -12,13 +11,15 @@ class TypeSeed extends Seeder
      */
     public function run()
     {
-        $types = ['recent', 'feature', 'trending]'];
 
-        foreach ($types as $type){
-           Type::create([
-                'name' => 'admin',
-            ]);
-        }
+    $types = ['recent', 'feature', 'trending]'];
 
+    foreach ($types as $type){
+        \App\Models\Type::create([
+            'name' => $type,
+        ]);
     }
+
+}
+
 }
