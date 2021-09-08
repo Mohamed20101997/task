@@ -34,13 +34,12 @@ class RepositoryServicesProvider extends ServiceProvider
             'App\Http\Repositories\TagRepository'
         );
 
-        //for EndUser
+        ///////////////////////// For End User //////////////////
+
       $this->app->bind(
-            'App\Http\Interfaces\FrontInterface',
-            'App\Http\Repositories\FrontRepository'
+            'App\Http\Interfaces\Front\HomeInterface',
+            'App\Http\Repositories\Front\HomeRepository'
         );
-
-
 
     }
 
