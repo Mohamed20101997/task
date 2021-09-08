@@ -51,7 +51,7 @@
                             <select name="type_id" class="form-control select2">
                                 <option value="">Choose Type</option>
                                 @foreach ($types as $type)
-                                    <option {{ old('type_id',$article_type_id) == $type->id ? "selected" : "" }}  value="{{ $type->id }}">{{ $type->name }}</option>
+                                    <option {{ old('type_id',$article->type->id) == $type->id ? "selected" : "" }}  value="{{ $type->id }}">{{ $type->name }}</option>
                                 @endforeach
                             </select>
                             @error('type_id')
@@ -72,6 +72,25 @@
 
 
                     </div> {{-- end of row --}}
+
+
+                    <div class="row">
+                        {{-- Tags  --}}
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Tags</label>
+                                <select name="tag_id[]" class="form-control select2" multiple>
+                                    @foreach ($tags as $tag)
+                                        <option {{ old('tag_id', $article->tag->tag_id) == $tag->id  ? 'selected':'' }}  value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                    @endforeach
+                                </select>
+                                @error('tag_id')
+                                <div class="text-danger">{{$message}}</div>
+                                @enderror
+                            </div>
+                        </div>{{-- end of col Tags --}}
+
+                    </div>
 
                     <div class="row">
 

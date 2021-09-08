@@ -74,13 +74,14 @@ class ArticleRepository implements ArticleInterface {
 
     public function edit($request,$id)
     {
-        $article = $this->articleModel::find($id);
+        $article = $this->articleModel::with('tag')->find($id);
+
         $categories = $this->categoryModel::get();
+        $tags = $this->tagModel::get();
         $types= $this->typeModel::get();
 
-
         if($article){
-            return view('dashboard.articles.edit', compact('article','categories','types'));
+            return view('dashboard.articles.edit', compact('article','categories','types','tags'));
         }else{
             return redirect()->back()->with(['error'=>'this article is not found']);
         }
@@ -89,7 +90,7 @@ class ArticleRepository implements ArticleInterface {
 
     public function update($request)
     {
-        try{
+//        try{
 
             $article =  $this->articleModel->find($request->id);
 
@@ -106,15 +107,16 @@ class ArticleRepository implements ArticleInterface {
             $data['admin_id'] = auth()->guard('admin')->user()->id;
 
             $article->update($data);
+
             $article->tags()->sync($request->tag_id);
 
             session()->flash('success', 'Article Updated successfully');
 
             return redirect()->route('article.index');
-
-        }catch(\Exception $e){
-            return redirect()->back()->with(['error'=>'there is problem please try again']);
-        }
+//
+//        }catch(\Exception $e){
+//            return redirect()->back()->with(['error'=>'there is problem please try again']);
+//        }
     }
 
     public function destroy($request, $id)

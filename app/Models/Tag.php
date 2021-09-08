@@ -16,4 +16,5 @@ class Tag extends Model
         });
 
     } //end of scopeWhenSearch
+
 }

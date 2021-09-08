@@ -71,7 +71,6 @@
                         </div>
                     </div>{{-- end of col image --}}
 
-
                 </div> {{-- end of row --}}
 
                 <div class="row">

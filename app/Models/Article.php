@@ -23,7 +23,7 @@ class Article extends Model
     public function scopeWhenSearch($query , $search)
     {
         return $query->when($search , function($q) use ($search){
-            return $q->where('title' , 'like' , "%$search%") ;
+            return $q->where('name' , 'like' , "%$search%") ;
         });
 
     } //end of scopeWhenSearch
@@ -42,7 +42,10 @@ class Article extends Model
 
 
     public function tags(){
-
       return $this->belongsToMany( Tag::class ,ArticleTags::class, 'article_id', 'tag_id');
+    }
+
+    public function tag(){
+      return $this->hasOne( ArticleTags::class ,'article_id');
     }
 }

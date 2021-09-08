@@ -12,7 +12,7 @@ class TypeSeed extends Seeder
     public function run()
     {
 
-    $types = ['recent', 'feature', 'trending]'];
+    $types = ['recent', 'feature', 'trending'];
 
     foreach ($types as $type){
         \App\Models\Type::create([

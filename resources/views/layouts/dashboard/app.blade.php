@@ -48,7 +48,7 @@
   <script src="{{ asset('dashboard_files/js/bootstrap.min.js') }}"></script>
   <script src="{{ asset('dashboard_files/plugins/tiny/tinymce.min.js') }}"></script>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
   <script>
@@ -81,25 +81,6 @@
 
   @include('dashboard.partials._confirm')
 
-
-  <script>
-      function readURL(input) {
-          if (input.files && input.files[0]) {
-
-              var reader = new FileReader();
-              $('#blah').removeClass('hidden');
-              reader.onload = function (e) {
-
-                  $('#blah').attr('src', e.target.result);
-              }
-              reader.readAsDataURL(input.files[0]); // convert to base64 string
-          }
-      }
-
-      $("#imgInp").change(function () {
-          readURL(this);
-      });
-  </script>
 
   @stack('script')
   </body>
