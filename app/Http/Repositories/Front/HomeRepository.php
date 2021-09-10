@@ -13,9 +13,12 @@ class HomeRepository implements HomeInterface{
 
     public function home()
     {
-        $articles = $this->articleModel::with(['category','type','tags'])->get();
+        $model = $this->articleModel::where('status', 1);
+        $articles = $model->orderBy('date','ASC')->take(5)->get();
+        $featured = $model->take(10)->get();
+        $posts = $model->orderBy('date','ASC')->take(10)->get();
 
-        return view('front.home', compact('articles'));
+        return view('front.home', compact('articles','featured','posts'));
 
     }
 }

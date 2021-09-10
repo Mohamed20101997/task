@@ -16,7 +16,7 @@
 </section>
 <section class="login-content">
     <div class="logo">
-        <h1> Task </h1>
+        <h1> Analog </h1>
     </div>
     <div class="login-box">
         <form class="login-form" method="POST" action="{{route('login')}}">

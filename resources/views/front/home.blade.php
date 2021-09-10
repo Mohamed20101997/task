@@ -39,23 +39,19 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-6 main_slider mb-3 mb-md-0">
                             <div class="silder_1 owl-carousel">
-                                @foreach( $articles as $article )
-                                    @if($article->type->name == 'trending')
-                                        <div class="wrap_silder"><a class="over_lay_slider" href="artical_blog.html">
-                                            </a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">Trending</a></span>
-                                            <div class="wrap_img"><img width="200px" class="def_img" src="{{$article->image_path}}" alt=""></div>
-                                            <div class="wrap_info_blog"><a class="a_hover_none categore" href="artical_blog.html">mobile</a>
-                                                <h2><a class="a_hover_none" href="artical_blog.html">Flutter and Fuchsia, the death of React & Android?</a></h2>
-                                                <ul class="list-unstyled mb-0 wrap_state">
-                                                    <li><span class="date">june 6, 2019</span></li>
-                                                    <li>
-                                                        <!-- use fontAwsome 5--><span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    @endif
-                                @endforeach
+                                <div class="wrap_silder"><a class="over_lay_slider" href="#">
+                                    </a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="#">Trending</a></span>
+                                    <div class="wrap_img"><img width="200px" class="def_img" src="" alt=""></div>
+                                    <div class="wrap_info_blog"><a class="a_hover_none categore" href="#">mobile</a>
+                                        <h2><a class="a_hover_none" href="#">Flutter and Fuchsia, the death of React & Android?</a></h2>
+                                        <ul class="list-unstyled mb-0 wrap_state">
+                                            <li><span class="date">june 6, 2019</span></li>
+                                            <li>
+                                                <!-- use fontAwsome 5--><span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -66,92 +62,43 @@
                                 <div class="col-sm-12 col-lg-6 mb-3 px-md-0 pr-lg-2 wrap_sub_slider_1">
                                     <!-- create by lib owl-carousel-->
                                     <div class="silder_1 sub_slider owl-carousel">
-                                        <!-- create by sass loop-->
-                                        <div class="wrap_silder"><a class="over_lay_slider" href="artical_blog.html"></a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">Featured</a></span>
-                                            <div class="wrap_img"><img class="def_img" src="{{asset('front/image/s_2.jpg')}}" alt=""></div>
-                                            <div class="wrap_info_blog"><a class="a_hover_none categore" href="artical_blog.html">mobile</a>
-                                                <h2><a class="a_hover_none" href="artical_blog.html">Flutter and Fuchsia, the death of React & Android?</a></h2>
+                                       @foreach($featured as $feature)
+                                            <div class="wrap_silder"><a class="over_lay_slider" href="artical_blog.html"></a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">Featured</a></span>
+                                            <div class="wrap_img"><img class="def_img" src="{{$feature->image_path}}" alt=""></div>
+                                            <div class="wrap_info_blog"><a class="a_hover_none categore" href="artical_blog.html">{{$feature->category->name}}</a>
+                                                <h2><a class="a_hover_none" href="artical_blog.html">{{$feature->name}}</a></h2>
                                                 <ul class="list-unstyled mb-0 wrap_state">
-                                                    <li><span class="date">june 6, 2019</span></li>
+                                                    <li><span class="date">{{date("d-m-Y", strtotime($feature->date)) }}</span></li>
                                                     <li>
                                                         <!-- use FontAwsome Pro or Free-->
-                                                        <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
+                                                        <span class="views"><i class="fas fa-chart-bar"></i> {{$feature->view}} views</span>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="wrap_silder"><a class="over_lay_slider" href="artical_blog.html"></a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">Featured</a></span>
-                                            <div class="wrap_img"><img class="def_img" src="{{asset('front/image/s_2.jpg')}}" alt=""></div>
-                                            <div class="wrap_info_blog"><a class="a_hover_none categore" href="artical_blog.html">mobile</a>
-                                                <h2><a class="a_hover_none" href="artical_blog.html">Flutter and Fuchsia, the death of React & Android?</a></h2>
-                                                <ul class="list-unstyled mb-0 wrap_state">
-                                                    <li><span class="date">june 6, 2019</span></li>
-                                                    <li>
-                                                        <!-- use FontAwsome Pro or Free-->
-                                                        <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="wrap_silder"><a class="over_lay_slider" href="artical_blog.html"></a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">Featured</a></span>
-                                            <div class="wrap_img"><img class="def_img" src="{{asset('front/image/s_2.jpg')}}" alt=""></div>
-                                            <div class="wrap_info_blog"><a class="a_hover_none categore" href="artical_blog.html">mobile</a>
-                                                <h2><a class="a_hover_none" href="artical_blog.html">Flutter and Fuchsia, the death of React & Android?</a></h2>
-                                                <ul class="list-unstyled mb-0 wrap_state">
-                                                    <li><span class="date">june 6, 2019</span></li>
-                                                    <li>
-                                                        <!-- use FontAwsome Pro or Free-->
-                                                        <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <!-- used grid system bootstap 4-->
                                 <div class="col-sm-12 col-lg-6 mb-3 px-md-0 pl-lg-2 wrap_sub_slider_2">
                                     <!-- create by lib owl-carousel-->
                                     <div class="silder_1 sub_slider owl-carousel">
-                                        <!-- create by sass loop-->
-                                        <div class="wrap_silder"><a class="over_lay_slider" href="artical_blog.html"></a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">Recent</a></span>
-                                            <div class="wrap_img"><img class="def_img" src="{{asset('front/image/s_1.jpg')}}" alt=""></div>
-                                            <div class="wrap_info_blog"><a class="a_hover_none categore" href="artical_blog.html">mobile</a>
-                                                <h2><a class="a_hover_none" href="artical_blog.html">Flutter and Fuchsia, the death of React & Android?</a></h2>
+                                        @foreach($articles as $article)
+                                            <div class="wrap_silder"><a class="over_lay_slider" href="artical_blog.html">
+                                                </a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">Recent</a></span>
+                                            <div class="wrap_img"><img class="def_img" src="{{$article->image_path}}" alt=""></div>
+                                            <div class="wrap_info_blog"><a class="a_hover_none categore" href="artical_blog.html">{{$article->category->name}}</a>
+                                                <h2><a class="a_hover_none" href="artical_blog.html">{{$article->name}}</a></h2>
                                                 <ul class="list-unstyled mb-0 wrap_state">
-                                                    <li><span class="date">june 6, 2019</span></li>
+                                                    <li><span class="date">{{date("d-m-Y", strtotime($article->date)) }}</span></li>
                                                     <li>
                                                         <!-- use FontAwsome Pro or Free-->
-                                                        <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
+                                                        <span class="views"><i class="fas fa-chart-bar"></i> {{$article->view}} views</span>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="wrap_silder"><a class="over_lay_slider" href="artical_blog.html"></a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">Recent</a></span>
-                                            <div class="wrap_img"><img class="def_img" src="{{asset('front/image/s_1.jpg')}}" alt=""></div>
-                                            <div class="wrap_info_blog"><a class="a_hover_none categore" href="artical_blog.html">mobile</a>
-                                                <h2><a class="a_hover_none" href="artical_blog.html">Flutter and Fuchsia, the death of React & Android?</a></h2>
-                                                <ul class="list-unstyled mb-0 wrap_state">
-                                                    <li><span class="date">june 6, 2019</span></li>
-                                                    <li>
-                                                        <!-- use FontAwsome Pro or Free-->
-                                                        <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="wrap_silder"><a class="over_lay_slider" href="artical_blog.html"></a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">Recent</a></span>
-                                            <div class="wrap_img"><img class="def_img" src="{{asset('front/image/s_1.jpg')}}" alt=""></div>
-                                            <div class="wrap_info_blog"><a class="a_hover_none categore" href="artical_blog.html">mobile</a>
-                                                <h2><a class="a_hover_none" href="artical_blog.html">Flutter and Fuchsia, the death of React & Android?</a></h2>
-                                                <ul class="list-unstyled mb-0 wrap_state">
-                                                    <li><span class="date">june 6, 2019</span></li>
-                                                    <li>
-                                                        <!-- use FontAwsome Pro or Free-->
-                                                        <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <!-- used grid system bootstap 4-->
@@ -159,14 +106,6 @@
                                     <!-- create by lib owl-carousel-->
                                     <div class="silder_1 sub_slider owl-carousel">
                                         <!-- create by sass loop-->
-                                        <div class="wrap_silder"><a class="over_lay_slider" href="ask_me.html"></a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">3d calculator</a></span>
-                                            <div class="wrap_img"><a href="ask_me.html"><img class="def_img" src="{{asset('front/image/s_3.jpg')}}" alt=""></a></div>
-                                            <div class="wrap_info_blog"></div>
-                                        </div>
-                                        <div class="wrap_silder"><a class="over_lay_slider" href="ask_me.html"></a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="ask_me.html">community</a></span>
-                                            <div class="wrap_img"><a href="ask_me.html"><img class="def_img" src="{{asset('front/image/s_3.jpg')}}" alt=""></a></div>
-                                            <div class="wrap_info_blog"></div>
-                                        </div>
                                         <div class="wrap_silder"><a class="over_lay_slider" href="ask_me.html"></a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">3d calculator</a></span>
                                             <div class="wrap_img"><a href="ask_me.html"><img class="def_img" src="{{asset('front/image/s_3.jpg')}}" alt=""></a></div>
                                             <div class="wrap_info_blog"></div>
@@ -274,187 +213,26 @@
             <div class="row">
                 <!-- used grid system bootstap 4-->
                 <div class="col-sm-12 col-md-12 col-lg-8">
-                    <!-- create by sass loop-->
-                    <div class="wrap_blog">
-                        <div class="wrap_img"><span class="name_bdg">Pinned</span><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/blog_2.j')}}"  alt="" srcset=""></a></div>
-                        <div class="wrap_info"><a class="categore" href="list_category.html">mobile</a>
-                            <h2 class="mb-0"><a class="a_hover_none hover_el" href="artical_blog.html">Know How SEO and Social Media Can Work Together</a></h2>
-                            <ul class="list-unstyled mb-0 wrap_state">
-                                <li><span>By </span><a class="a_hover_none" href="#">Mark Scienstein </a></li>
-                                <li><span class="date">june 6, 2019</span></li>
-                                <li>
-                                    <!-- use FontAwsome Pro or Free-->
-                                    <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                </li>
-                            </ul>
-                            <p class="mb-0">Faints contribution fifty specified appearing copyright reveal side third. Supply…</p>
-                            <!-- use FontAwsome Pro or Free-->
-                            <a class="read_more a_hover_none" href="artical_blog.html"> read more <i class="fas fa-long-arrow-alt-right"></i></a>
+
+                    @foreach($posts as $post)
+                        <div class="wrap_blog">
+                            <div class="wrap_img"><span class="name_bdg">Pinned</span><a href="artical_blog.html"><img class="def_img" src="{{$post->image_path}}"  alt="" srcset=""></a></div>
+                            <div class="wrap_info"><a class="categore" href="list_category.html">{{$post->category->name}}</a>
+                                <h2 class="mb-0"><a class="a_hover_none hover_el" href="artical_blog.html">{{$post->name}}</a></h2>
+                                <ul class="list-unstyled mb-0 wrap_state">
+                                    <li><span>By </span><a class="a_hover_none" href="#">{{$post->author->name}}</a></li>
+                                    <li><span class="date">{{date("d-m-Y", strtotime($article->date)) }}</span></li>
+                                    <li>
+                                        <span class="views"><i class="fas fa-chart-bar"></i> {{$post->view}} views</span>
+                                    </li>
+                                </ul>
+                                <p class="mb-0">{{substr($post->description,5)}}</p>
+                                <!-- use FontAwsome Pro or Free-->
+                                <a class="read_more a_hover_none" href="artical_blog.html"> read more <i class="fas fa-long-arrow-alt-right"></i></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="clear_fix"></div>
-                    <div class="wrap_blog">
-                        <div class="wrap_img"><span class="name_bdg">Pinned</span><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/blog_2.j')}}"  alt="" srcset=""></a></div>
-                        <div class="wrap_info"><a class="categore" href="list_category.html">mobile</a>
-                            <h2 class="mb-0"><a class="a_hover_none hover_el" href="artical_blog.html">Know How SEO and Social Media Can Work Together</a></h2>
-                            <ul class="list-unstyled mb-0 wrap_state">
-                                <li><span>By </span><a class="a_hover_none" href="#">Mark Scienstein </a></li>
-                                <li><span class="date">june 6, 2019</span></li>
-                                <li>
-                                    <!-- use FontAwsome Pro or Free-->
-                                    <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                </li>
-                            </ul>
-                            <p class="mb-0">Faints contribution fifty specified appearing copyright reveal side third. Supply…</p>
-                            <!-- use FontAwsome Pro or Free-->
-                            <a class="read_more a_hover_none" href="artical_blog.html"> read more <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="clear_fix"></div>
-                    <div class="wrap_blog">
-                        <div class="wrap_img"><span class="name_bdg">Pinned</span><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/blog_2.j')}}"  alt="" srcset=""></a></div>
-                        <div class="wrap_info"><a class="categore" href="list_category.html">mobile</a>
-                            <h2 class="mb-0"><a class="a_hover_none hover_el" href="artical_blog.html">Know How SEO and Social Media Can Work Together</a></h2>
-                            <ul class="list-unstyled mb-0 wrap_state">
-                                <li><span>By </span><a class="a_hover_none" href="#">Mark Scienstein </a></li>
-                                <li><span class="date">june 6, 2019</span></li>
-                                <li>
-                                    <!-- use FontAwsome Pro or Free-->
-                                    <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                </li>
-                            </ul>
-                            <p class="mb-0">Faints contribution fifty specified appearing copyright reveal side third. Supply…</p>
-                            <!-- use FontAwsome Pro or Free-->
-                            <a class="read_more a_hover_none" href="artical_blog.html"> read more <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="clear_fix"></div>
-                    <div class="wrap_blog">
-                        <div class="wrap_img"><span class="name_bdg">Pinned</span><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/blog_2.j')}}"  alt="" srcset=""></a></div>
-                        <div class="wrap_info"><a class="categore" href="list_category.html">mobile</a>
-                            <h2 class="mb-0"><a class="a_hover_none hover_el" href="artical_blog.html">Know How SEO and Social Media Can Work Together</a></h2>
-                            <ul class="list-unstyled mb-0 wrap_state">
-                                <li><span>By </span><a class="a_hover_none" href="#">Mark Scienstein </a></li>
-                                <li><span class="date">june 6, 2019</span></li>
-                                <li>
-                                    <!-- use FontAwsome Pro or Free-->
-                                    <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                </li>
-                            </ul>
-                            <p class="mb-0">Faints contribution fifty specified appearing copyright reveal side third. Supply…</p>
-                            <!-- use FontAwsome Pro or Free-->
-                            <a class="read_more a_hover_none" href="artical_blog.html"> read more <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="clear_fix"></div>
-                    <div class="wrap_blog">
-                        <div class="wrap_img"><span class="name_bdg">Pinned</span><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/blog_2.j')}}"  alt="" srcset=""></a></div>
-                        <div class="wrap_info"><a class="categore" href="list_category.html">mobile</a>
-                            <h2 class="mb-0"><a class="a_hover_none hover_el" href="artical_blog.html">Know How SEO and Social Media Can Work Together</a></h2>
-                            <ul class="list-unstyled mb-0 wrap_state">
-                                <li><span>By </span><a class="a_hover_none" href="#">Mark Scienstein </a></li>
-                                <li><span class="date">june 6, 2019</span></li>
-                                <li>
-                                    <!-- use FontAwsome Pro or Free-->
-                                    <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                </li>
-                            </ul>
-                            <p class="mb-0">Faints contribution fifty specified appearing copyright reveal side third. Supply…</p>
-                            <!-- use FontAwsome Pro or Free-->
-                            <a class="read_more a_hover_none" href="artical_blog.html"> read more <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="clear_fix"></div>
-                    <div class="wrap_blog">
-                        <div class="wrap_img"><span class="name_bdg">Pinned</span><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/blog_2.j')}}"  alt="" srcset=""></a></div>
-                        <div class="wrap_info"><a class="categore" href="list_category.html">mobile</a>
-                            <h2 class="mb-0"><a class="a_hover_none hover_el" href="artical_blog.html">Know How SEO and Social Media Can Work Together</a></h2>
-                            <ul class="list-unstyled mb-0 wrap_state">
-                                <li><span>By </span><a class="a_hover_none" href="#">Mark Scienstein </a></li>
-                                <li><span class="date">june 6, 2019</span></li>
-                                <li>
-                                    <!-- use FontAwsome Pro or Free-->
-                                    <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                </li>
-                            </ul>
-                            <p class="mb-0">Faints contribution fifty specified appearing copyright reveal side third. Supply…</p>
-                            <!-- use FontAwsome Pro or Free-->
-                            <a class="read_more a_hover_none" href="artical_blog.html"> read more <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="clear_fix"></div>
-                    <div class="wrap_blog">
-                        <div class="wrap_img"><span class="name_bdg">Pinned</span><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/blog_2.j')}}"  alt="" srcset=""></a></div>
-                        <div class="wrap_info"><a class="categore" href="list_category.html">mobile</a>
-                            <h2 class="mb-0"><a class="a_hover_none hover_el" href="artical_blog.html">Know How SEO and Social Media Can Work Together</a></h2>
-                            <ul class="list-unstyled mb-0 wrap_state">
-                                <li><span>By </span><a class="a_hover_none" href="#">Mark Scienstein </a></li>
-                                <li><span class="date">june 6, 2019</span></li>
-                                <li>
-                                    <!-- use FontAwsome Pro or Free-->
-                                    <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                </li>
-                            </ul>
-                            <p class="mb-0">Faints contribution fifty specified appearing copyright reveal side third. Supply…</p>
-                            <!-- use FontAwsome Pro or Free-->
-                            <a class="read_more a_hover_none" href="artical_blog.html"> read more <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="clear_fix"></div>
-                    <div class="wrap_blog">
-                        <div class="wrap_img"><span class="name_bdg">Pinned</span><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/blog_2.j')}}"  alt="" srcset=""></a></div>
-                        <div class="wrap_info"><a class="categore" href="list_category.html">mobile</a>
-                            <h2 class="mb-0"><a class="a_hover_none hover_el" href="artical_blog.html">Know How SEO and Social Media Can Work Together</a></h2>
-                            <ul class="list-unstyled mb-0 wrap_state">
-                                <li><span>By </span><a class="a_hover_none" href="#">Mark Scienstein </a></li>
-                                <li><span class="date">june 6, 2019</span></li>
-                                <li>
-                                    <!-- use FontAwsome Pro or Free-->
-                                    <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                </li>
-                            </ul>
-                            <p class="mb-0">Faints contribution fifty specified appearing copyright reveal side third. Supply…</p>
-                            <!-- use FontAwsome Pro or Free-->
-                            <a class="read_more a_hover_none" href="artical_blog.html"> read more <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="clear_fix"></div>
-                    <div class="wrap_blog">
-                        <div class="wrap_img"><span class="name_bdg">Pinned</span><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/blog_2.j')}}"  alt="" srcset=""></a></div>
-                        <div class="wrap_info"><a class="categore" href="list_category.html">mobile</a>
-                            <h2 class="mb-0"><a class="a_hover_none hover_el" href="artical_blog.html">Know How SEO and Social Media Can Work Together</a></h2>
-                            <ul class="list-unstyled mb-0 wrap_state">
-                                <li><span>By </span><a class="a_hover_none" href="#">Mark Scienstein </a></li>
-                                <li><span class="date">june 6, 2019</span></li>
-                                <li>
-                                    <!-- use FontAwsome Pro or Free-->
-                                    <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                </li>
-                            </ul>
-                            <p class="mb-0">Faints contribution fifty specified appearing copyright reveal side third. Supply…</p>
-                            <!-- use FontAwsome Pro or Free-->
-                            <a class="read_more a_hover_none" href="artical_blog.html"> read more <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="clear_fix"></div>
-                    <div class="wrap_blog">
-                        <div class="wrap_img"><span class="name_bdg">Pinned</span><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/blog_2.j')}}"  alt="" srcset=""></a></div>
-                        <div class="wrap_info"><a class="categore" href="list_category.html">mobile</a>
-                            <h2 class="mb-0"><a class="a_hover_none hover_el" href="artical_blog.html">Know How SEO and Social Media Can Work Together</a></h2>
-                            <ul class="list-unstyled mb-0 wrap_state">
-                                <li><span>By </span><a class="a_hover_none" href="#">Mark Scienstein </a></li>
-                                <li><span class="date">june 6, 2019</span></li>
-                                <li>
-                                    <!-- use FontAwsome Pro or Free-->
-                                    <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                </li>
-                            </ul>
-                            <p class="mb-0">Faints contribution fifty specified appearing copyright reveal side third. Supply…</p>
-                            <!-- use FontAwsome Pro or Free-->
-                            <a class="read_more a_hover_none" href="artical_blog.html"> read more <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="clear_fix"></div>
+                        <div class="clear_fix"></div>
+                    @endforeach
                     <div class="load_more mb-4"><span class="hover_btn">load more posts</span></div>
                 </div>
                 <div class="col-sm-12 col-lg-4">
@@ -559,21 +337,21 @@
     </div>
     <!-- end contact us-->
 
-    <!-- start box newslatter-->
-    <div class="wrap_new_sletter">
-        <div class="new_sletter mb-4">
-            <h3>Newsletter <i class="fas fa-times hover_el close_newslatter"></i></h3>
-            <p>Subscribe to our newsletter and get our newest updates right on your email.</p>
-            <form action="">
-                <input type="text" name="" placeholder="Your email address">
-                <label for="">
-                    <input class="v-mid" type="checkbox" name=""><a class="a_hover_none" href="#">I agree to the terms & conditions</a>
-                </label>
-                <button class="hover_btn">Subscribe</button>
-            </form>
-        </div>
-    </div>
-    <!-- start box newslatter          -->
+{{--    <!-- start box newslatter-->--}}
+{{--    <div class="wrap_new_sletter">--}}
+{{--        <div class="new_sletter mb-4">--}}
+{{--            <h3>Newsletter <i class="fas fa-times hover_el close_newslatter"></i></h3>--}}
+{{--            <p>Subscribe to our newsletter and get our newest updates right on your email.</p>--}}
+{{--            <form action="">--}}
+{{--                <input type="text" name="" placeholder="Your email address">--}}
+{{--                <label for="">--}}
+{{--                    <input class="v-mid" type="checkbox" name=""><a class="a_hover_none" href="#">I agree to the terms & conditions</a>--}}
+{{--                </label>--}}
+{{--                <button class="hover_btn">Subscribe</button>--}}
+{{--            </form>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <!-- start box newslatter          -->--}}
 
 
 @endsection
