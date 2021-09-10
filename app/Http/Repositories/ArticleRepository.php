@@ -3,9 +3,9 @@
 namespace App\Http\Repositories;
 use App\Http\Interfaces\ArticleInterface;
 use App\Models\Article;
+use App\Models\Author;
 use App\Models\Category;
 use App\Models\Tag;
-use App\Models\Type;
 
 class ArticleRepository implements ArticleInterface {
 
@@ -14,20 +14,20 @@ class ArticleRepository implements ArticleInterface {
 
     private $categoryModel;
     private $tagModel;
-    private $typeModel;
+    private $authorModel;
 
 
-    public function __construct(Article $article, Category $category, Tag $tag , Type $type){
+    public function __construct(Article $article, Category $category, Tag $tag, Author $author){
         $this->articleModel = $article;
         $this->categoryModel = $category;
         $this->tagModel = $tag;
-        $this->typeModel = $type;
+        $this->authorModel = $author;
     }
 
 
     public function index()
     {
-        $articles = $this->articleModel::with('category','type')
+        $articles = $this->articleModel::with(['category','author'])
             ->whenSearch(request()->search)
             ->whenCategory(request()->category)->paginate(5);
             $categories = $this->categoryModel::get();
@@ -40,8 +40,9 @@ class ArticleRepository implements ArticleInterface {
     {
         $categories = $this->categoryModel::get();
         $tags = $this->tagModel::get();
-        $types = $this->typeModel::get();
-        return view('dashboard.articles.create',compact('categories','tags','types'));
+        $authors = $this->authorModel::get();
+
+        return view('dashboard.articles.create',compact('categories','tags','authors'));
 
     } //end of create function
 
@@ -49,6 +50,14 @@ class ArticleRepository implements ArticleInterface {
     {
         try{
             $data = $request->except('_token');
+
+            if($request->has('status'))
+            {
+                $data['status'] = $request->status;
+            }else{
+                $data['status'] = '0';
+            }
+
 
             if($request->image)
             {
@@ -74,14 +83,14 @@ class ArticleRepository implements ArticleInterface {
 
     public function edit($request,$id)
     {
-        $article = $this->articleModel::with('tag')->find($id);
-
+        $article = $this->articleModel::with('articleTags')->find($id);
         $categories = $this->categoryModel::get();
+        $authors = $this->authorModel::get();
         $tags = $this->tagModel::get();
-        $types= $this->typeModel::get();
+
 
         if($article){
-            return view('dashboard.articles.edit', compact('article','categories','types','tags'));
+            return view('dashboard.articles.edit', compact('article','categories','authors','tags'));
         }else{
             return redirect()->back()->with(['error'=>'this article is not found']);
         }
@@ -95,6 +104,15 @@ class ArticleRepository implements ArticleInterface {
             $article =  $this->articleModel->find($request->id);
 
             $data = $request->except('_token');
+
+            if($request->has('status'))
+            {
+                $data['status'] = $request->status;
+            }else{
+                $data['status'] = '0';
+            }
+
+
             if($request->has('image'))
             {
                 // helper_function :  for delete the previous image

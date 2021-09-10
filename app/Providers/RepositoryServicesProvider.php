@@ -25,6 +25,11 @@ class RepositoryServicesProvider extends ServiceProvider
         );
 
         $this->app->bind(
+            'App\Http\Interfaces\AuthorInterface',
+            'App\Http\Repositories\AuthorRepository'
+        );
+
+        $this->app->bind(
             'App\Http\Interfaces\CategoryInterface',
             'App\Http\Repositories\CategoryRepository'
         );

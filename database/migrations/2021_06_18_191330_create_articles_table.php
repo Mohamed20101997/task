@@ -21,14 +21,21 @@ class CreateArticlesTable extends Migration
 
             $table->integer('view')->nullable();
 
+            $table->tinyInteger('status')->default(0);
+
+            $table->string('date');
+
+
             $table->bigInteger('admin_id')->unsigned();
             $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
+
+            $table->bigInteger('author_id')->unsigned();
+            $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');
 
             $table->bigInteger('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 
-            $table->bigInteger('type_id')->unsigned();
-            $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
+
 
             $table->timestamps();
         });
