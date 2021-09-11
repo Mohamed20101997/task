@@ -14,6 +14,7 @@ class Article extends Model
 
  protected $appends = ['image_path'];
 
+
   //Start of Relations
   public function category(){
       return $this->belongsTo(Category::class, 'category_id','id');
@@ -59,6 +60,22 @@ class Article extends Model
 
     } // end of getImagePathAttribute
 
+
+    public function getViewAttribute($value){
+
+      $view = (int)$value;
+        if($view >= 1000 && $view < 9990000){
+            $view /= 1000 ;
+            $view = $view.'K';
+        }elseif ($view >= 1000000)
+        {
+            $view /= 1000000;
+            $view = $view.'M';
+        }
+
+        return $view;
+
+    } // end of getImagePathAttribute
 
     public function status($value){
       $status = '';

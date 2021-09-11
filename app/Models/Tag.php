@@ -8,6 +8,12 @@ class Tag extends Model
 {
 
     protected $fillable = ['name'];
+    protected $hidden = ['pivot'];
+
+    public function articles(){
+        return $this->hasMany(ArticleTags::class, 'tag_id');
+    }
+
 
     public function scopeWhenSearch($query , $search)
     {
@@ -16,5 +22,7 @@ class Tag extends Model
         });
 
     } //end of scopeWhenSearch
+
+
 
 }
