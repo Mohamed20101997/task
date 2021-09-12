@@ -18,7 +18,7 @@
                 @csrf
                 @method('post')
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         {{-- name --}}
                         <div class="form-group">
                             <label>Title</label>
@@ -29,7 +29,7 @@
                         </div>
                     </div>{{-- end of col name --}}
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         {{-- category --}}
                         <div class="form-group">
                             <label>Category</label>
@@ -44,23 +44,49 @@
                         </div>
                     </div> {{-- end of col category--}}
 
-                    <div class="col-md-3">
-                        {{-- type --}}
+                    <div class="col-md-4">
+                        {{-- date --}}
                         <div class="form-group">
-                            <label>types</label>
-                                <select name="type_id" class="form-control select2">
-                                        <option value="">Choose Type</option>
-                                    @foreach ($types as $type)
-                                        <option {{ old('type_id') == $type->id ? "selected" : "" }}  value="{{ $type->id }}">{{ $type->name }}</option>
-                                    @endforeach
-                                </select>
-                            @error('type_id')
+                            <label>Date</label>
+                            <input type="datetime-local" name="date" class="form-control" value="{{old('date')}}">
+                            @error('date')
+                            <div class="text-danger">{{$message}}</div>
+                            @enderror
+                        </div>
+                    </div> {{-- end of col date--}}
+
+                </div> {{-- end of row --}}
+
+
+                <div class="row">
+                    <div class="col-md-4">
+                        {{-- authors --}}
+                        <div class="form-group">
+                            <label>Authors</label>
+                            <select name="author_id" class="form-control select2">
+                                @foreach ($authors as $author)
+                                    <option {{ old('author_id') == $author->id ? "selected" : "" }}  value="{{ $author->id }}">{{ $author->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('author_id')
                                 <div class="text-danger">{{$message}}</div>
                             @enderror
                         </div>
-                    </div> {{-- end of col type--}}
+                    </div> {{-- end of col authors--}}
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
+                        {{-- status --}}
+                        <div class="form-group">
+                            <label>Status</label>
+                            <div class="toggle-flip">
+                                <label><input type="checkbox" value="1" name="status" data-color="success" checked>
+                                    <span class="flip-indecator" data-toggle-on="Active" data-toggle-off="Not Active"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>{{-- end of col status--}}
+
+                    <div class="col-md-4">
                         {{-- image --}}
                         <div class="form-group">
                             <label>Image</label>
@@ -71,7 +97,8 @@
                         </div>
                     </div>{{-- end of col image --}}
 
-                </div> {{-- end of row --}}
+
+                </div>{{-- end of row --}}
 
                 <div class="row">
                     {{-- Tags  --}}
@@ -89,10 +116,9 @@
                         </div>
                     </div>{{-- end of col Tags --}}
 
-                </div>
+                </div>{{-- end of row --}}
 
                 <div class="row">
-
                     <div class="col-md-12">
                         {{-- Description --}}
                         <div class="form-group">

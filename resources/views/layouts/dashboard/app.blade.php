@@ -16,13 +16,17 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_files/plugins/noty/noty.css') }}">
     <script src="{{ asset('dashboard_files/plugins/noty/noty.min.js') }}"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
+    <style>
+        .toggle-flip input[type="checkbox"] + .flip-indecator {
+            width: 110px;
+        }
+    </style>
 </head>
 <body class="app sidebar-mini">
 <!-- Navbar-->
 @include('layouts.dashboard._header')
 <!-- Sidebar menu-->
-@include('layouts.dashboard._aside')
-
 @include('layouts.dashboard._aside')
 
 <main class="app-content">

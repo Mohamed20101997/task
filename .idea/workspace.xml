@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd08c67c-590d-484b-971e-62799a4a6a17" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/front/_side.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/blog.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Interfaces/Front/HomeInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Interfaces/Front/HomeInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/Front/HomeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/Front/HomeRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ArticleTags.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ArticleTags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/footer.blade.php" afterDir="false" />
@@ -154,7 +163,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/front" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/front" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -165,10 +174,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\analog\public\front" />
-      <recent name="C:\laragon\www\analog\database\seeds" />
-      <recent name="C:\laragon\www\analog\resources\views\dashboard" />
+      <recent name="C:\laragon\www\analog\resources\views\front" />
       <recent name="C:\laragon\www\analog\app\Http\Requests" />
+      <recent name="C:\laragon\www\analog\resources\views\dashboard" />
+      <recent name="C:\laragon\www\analog\app\Http\Interfaces" />
       <recent name="C:\laragon\www\analog\app\Http\Repositories" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -211,8 +220,10 @@
       <workItem from="1630845492178" duration="1942000" />
       <workItem from="1631047131592" duration="741000" />
       <workItem from="1631099674145" duration="9414000" />
-      <workItem from="1631179577119" duration="545000" />
-      <workItem from="1631187327182" duration="2791000" />
+      <workItem from="1631253755777" duration="13602000" />
+      <workItem from="1631309606172" duration="7494000" />
+      <workItem from="1631350005080" duration="15416000" />
+      <workItem from="1631385655017" duration="7385000" />
     </task>
     <servers />
   </component>

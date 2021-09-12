@@ -3,31 +3,33 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Models\ArticleTags;
 
 class Article extends Model
 {
 
- protected $fillable = ['name','description','image','category_id','admin_id','type_id'];
+ protected $fillable = ['name','description','image','category_id','admin_id','date','author_id','status'];
 
  protected $appends = ['image_path'];
+
 
   //Start of Relations
   public function category(){
       return $this->belongsTo(Category::class, 'category_id','id');
   }
 
-  //Start of Relations
-  public function type(){
-      return $this->belongsTo(Type::class, 'type_id','id');
+  public function author(){
+      return $this->belongsTo(Author::class, 'author_id','id');
   }
 
     public function tags(){
         return $this->belongsToMany( Tag::class ,ArticleTags::class, 'article_id', 'tag_id');
     }
 
-    public function tag(){
-        return $this->hasOne( ArticleTags::class ,'article_id');
+    public function articleTags(){
+        return $this->hasMany(ArticleTags::class ,'article_id');
     }
 
 
@@ -58,5 +60,44 @@ class Article extends Model
 
     } // end of getImagePathAttribute
 
+
+    public function getViewAttribute($value){
+
+      $view = (int)$value;
+        if($view >= 1000 && $view < 9990000){
+            $view /= 1000 ;
+            $view = $view.'K';
+        }elseif ($view >= 1000000)
+        {
+            $view /= 1000000;
+            $view = $view.'M';
+        }
+
+        return $view;
+
+    } // end of getImagePathAttribute
+
+    public function status($value){
+      $status = '';
+      $value == 1 ? $status = 'Active' : $status = 'Not Active';
+
+      return $status;
+    }
+
+
+    public function getTagId($art_id,$id){
+
+      $articleTas = ArticleTags::where([['article_id',$art_id],['tag_id',$id]])->first();
+
+      if($articleTas)
+      {
+          $id = $articleTas->tag_id ;
+      }else{
+          $id = null;
+      }
+
+      return $id;
+
+    }
 
 }

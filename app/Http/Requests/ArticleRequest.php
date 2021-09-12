@@ -24,11 +24,13 @@ class ArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'         => 'required',
-            'description'   => 'required|min:10',
-            'image'         => 'required|image|mimes:jpeg,jpg,png',
-            'category_id'   => 'required|exists:categories,id',
-            'tag_id'   => 'required|exists:tags,id',
+            'name'              => 'required',
+            'description'       => 'required|min:10',
+            'image'             => 'required|image|mimes:jpeg,jpg,png',
+            'category_id'       => 'required|exists:categories,id',
+            'tag_id'            => 'required|exists:tags,id',
+            'author_id'         => 'required|exists:authors,id',
+            'date'              => 'required|date',
         ];
     }
 }

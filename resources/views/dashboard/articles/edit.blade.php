@@ -19,7 +19,7 @@
                     @method('put')
                     <input name="id" value="{{$article->id}}" type="hidden">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             {{-- title --}}
                             <div class="form-group">
                                 <label>Title</label>
@@ -30,7 +30,7 @@
                             </div>
                         </div>{{-- end of col title --}}
 
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             {{-- category --}}
                             <div class="form-group">
                                 <label>Category</label>
@@ -44,22 +44,50 @@
                                 @enderror
                             </div>
                         </div> {{-- end of col category--}}
-                        <div class="col-md-3">
-                        {{-- type --}}
+
+                        <div class="col-md-4">
+                        {{-- date --}}
                         <div class="form-group">
-                            <label>types</label>
-                            <select name="type_id" class="form-control select2">
-                                <option value="">Choose Type</option>
-                                @foreach ($types as $type)
-                                    <option {{ old('type_id',$article->type->id) == $type->id ? "selected" : "" }}  value="{{ $type->id }}">{{ $type->name }}</option>
-                                @endforeach
-                            </select>
-                            @error('type_id')
+                            <label>Date</label>
+                            <input type="datetime-local" name="date" class="form-control" value="{{old('date', $article->date)}}">
+                            @error('date')
                             <div class="text-danger">{{$message}}</div>
                             @enderror
                             </div>
-                        </div> {{-- end of col type--}}
-                        <div class="col-md-3">
+                        </div> {{-- end of col date--}}
+
+                    </div> {{-- end of row --}}
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            {{-- authors --}}
+                            <div class="form-group">
+                                <label>Authors</label>
+                                <select name="author_id" class="form-control select2">
+                                    @foreach ($authors as $author)
+                                        <option {{ old('author_id',$article->author_id) == $author->id ? "selected" : "" }}  value="{{ $author->id }}">{{ $author->name }}</option>
+                                    @endforeach
+                                </select>
+                                @error('author_id')
+                                <div class="text-danger">{{$message}}</div>
+                                @enderror
+                            </div>
+                        </div> {{-- end of col authors--}}
+
+                        <div class="col-md-4">
+                            {{-- status --}}
+                            <div class="form-group">
+                                <label>Status</label>
+                                <div class="toggle-flip">
+                                    <label><input type="checkbox" value="1" name="status" data-color="success" {{$article->status == '1' ? 'checked' : ''}} >
+                                        <span class="flip-indecator" data-toggle-on="Active" data-toggle-off="Not Active"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>{{-- end of col status--}}
+
+                        <div class="col-md-4">
                             {{-- image --}}
                             <div class="form-group">
                                 <label>Image</label>
@@ -69,31 +97,28 @@
                                 @enderror
                             </div>
                         </div>{{-- end of col image --}}
-
-
-                    </div> {{-- end of row --}}
+                    </div>{{-- end of row --}}
 
 
                     <div class="row">
-                        {{-- Tags  --}}
+                        {{--Tags--}}
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Tags</label>
                                 <select name="tag_id[]" class="form-control select2" multiple>
                                     @foreach ($tags as $tag)
-                                        <option {{ old('tag_id', $article->tag->tag_id) == $tag->id  ? 'selected':'' }}  value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                        <option {{ old('tag_id',$article->getTagId($article->id,$tag->id)) == $tag->id  ? 'selected':'' }}  value="{{ $tag->id }}">{{ $tag->name }}</option>
                                     @endforeach
                                 </select>
                                 @error('tag_id')
                                 <div class="text-danger">{{$message}}</div>
                                 @enderror
                             </div>
-                        </div>{{-- end of col Tags --}}
+                        </div> end of col Tags
 
-                    </div>
+                    </div>  {{--end of row --}}
 
                     <div class="row">
-
                         <div class="col-md-12">
                             {{-- Description --}}
                             <div class="form-group">
@@ -111,7 +136,7 @@
                     </div> {{-- end of row --}}
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>Add</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>Update</button>
                     </div>
 
                 </form>

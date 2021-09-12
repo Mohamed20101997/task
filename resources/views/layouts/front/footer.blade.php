@@ -30,19 +30,16 @@
             <!-- used grid system botstrap 4-->
             <div class="col-sm-12 col-md-6 col-lg-4 lastes_post order-1 order-lg-2">
                 <h3>Latest Posts</h3>
-                <!-- create by sass loop-->
-                <div class="wrap_post">
-                    <div class="wrap_img"><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/last_0.jpg')}}" alt=""></a></div>
+
+                @foreach($latest as $lat)
+                    <div class="wrap_post">
+                    <div class="wrap_img"><a href="{{route('article.blog',$lat->id)}}"><img class="def_img" src="{{$lat->image_path}}" alt=""></a></div>
                     <div class="wrap_info">
-                        <h4><a class="a_hover_none hover_el" href="artical_blog.html">Options for Your Activity Tracking Smart Watch</a></h4><span class="date">June 4, 2019</span>
+                        <h4><a class="a_hover_none hover_el" href="{{route('article.blog',$lat->id)}}">{{$lat->name}}</a></h4><span class="date">{{date("d-m-Y", strtotime($article->date)) }}</span>
                     </div>
                 </div>
-                <div class="wrap_post">
-                    <div class="wrap_img"><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/last_1.jpg')}}" alt=""></a></div>
-                    <div class="wrap_info">
-                        <h4><a class="a_hover_none hover_el" href="artical_blog.html">Options for Your Activity Tracking Smart Watch</a></h4><span class="date">June 4, 2019</span>
-                    </div>
-                </div>
+                @endforeach
+
                 <h3>popular questions</h3>
                 <!-- create by sass loop-->
                 <div class="wrap_post">
@@ -62,18 +59,9 @@
             <div class="col-sm-12 col-md-6 col-lg-4 tags order-2 order-lg-3">
                 <h3>Tags</h3>
                 <ul class="list-unstyled">
-                    <!-- create by sass loop-->
-                    <li><a class="a_hover_none" href="list_category.html">Android</a></li>
-                    <li><a class="a_hover_none" href="list_category.html">Computer</a></li>
-                    <li><a class="a_hover_none" href="list_category.html">Desk</a></li>
-                    <li><a class="a_hover_none" href="list_category.html">Drone</a></li>
-                    <li><a class="a_hover_none" href="list_category.html">Featured</a></li>
-                    <li><a class="a_hover_none" href="list_category.html">Graphic</a></li>
-                    <li><a class="a_hover_none" href="list_category.html">Laptop</a></li>
-                    <li><a class="a_hover_none" href="list_category.html">Phone</a></li>
-                    <li><a class="a_hover_none" href="list_category.html">Smartphone</a></li>
-                    <li><a class="a_hover_none" href="list_category.html">Social</a></li>
-                    <li><a class="a_hover_none" href="list_category.html">Watch</a></li>
+                    @foreach($tags as $tag)
+                        <li><a class="a_hover_none" href="list_category.html">{{$tag->name}}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </div>
