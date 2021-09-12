@@ -15,14 +15,31 @@ class SettingRepository implements SettingInterface {
 
     public function index()
     {
-
-        return view('dashboard.settings.show');
-
+        $setting = $this->settingModel::first();
+        $setting->social_links = json_decode($setting->social_links);
+        return view('dashboard.settings.show', compact('setting'));
     }//end of index function
 
-    public function edit($request, $id)
+    public function edit($request)
     {
+        try{
+            $data = $request->except('_token');
+            $data['social_links'] = json_encode($request->social_links);
+            $setting = $this->settingModel::first();
+            if($setting){
+                $this->settingModel::where('id',$setting->id)->update($data);
+            }else{
+                $this->settingModel::create($data);
+            }
 
+
+            session()->flash('success', 'Settings updated successfully');
+
+            return redirect()->back();
+
+        }catch(\Exception $e){
+            return redirect()->back()->with(['error'=>'there is problem please try again']);
+        }
 
     } // end of edit function
 

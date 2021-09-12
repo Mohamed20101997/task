@@ -69,7 +69,7 @@
 </script>
 <script>
     $(document).ready(function() {
-        $('#summernote').summernote({
+        $('#summernote ,#summernote1 ,#summernote2').summernote({
             placeholder: 'Description for article',
             height: 200
         });
