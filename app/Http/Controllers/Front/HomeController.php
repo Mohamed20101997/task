@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Http\Interfaces\Front\HomeInterface;
+use App\Http\Requests\CommentRequest;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -32,9 +33,32 @@ class HomeController extends Controller
         return $this->HomeInterface->articleBlog($id);
     }
 
-    public function articleComment(Request $request)
+    public function articleComment(CommentRequest $request)
     {
         return $this->HomeInterface->articleComment($request);
+    }
+
+    public function articleList($id)
+    {
+        return $this->HomeInterface->articleList($id);
+    }
+
+    public function articleListTag($id)
+    {
+        return $this->HomeInterface->articleListTag($id);
+    }
+
+    public function mostView()
+    {
+        return $this->HomeInterface->mostView();
+    }
+    public function recent()
+    {
+        return $this->HomeInterface->recent();
+    }
+    public function featured()
+    {
+        return $this->HomeInterface->featured();
     }
 
 

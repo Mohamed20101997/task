@@ -33,9 +33,11 @@
 
                 @foreach($latest as $lat)
                     <div class="wrap_post">
-                    <div class="wrap_img"><a href="{{route('article.blog',$lat->id)}}"><img class="def_img" src="{{$lat->image_path}}" alt=""></a></div>
+                    <div class="wrap_img"><a href="{{route('article.blog',$lat->id)}}">
+                            <img class="def_img" src="{{$lat->image_path}}" alt=""></a>
+                    </div>
                     <div class="wrap_info">
-                        <h4><a class="a_hover_none hover_el" href="{{route('article.blog',$lat->id)}}">{{$lat->name}}</a></h4><span class="date">{{date("d-m-Y", strtotime($article->date)) }}</span>
+                        <h4><a class="a_hover_none hover_el" href="{{route('article.blog',$lat->id)}}">{{$lat->name}}</a></h4><span class="date">{{date("M d,Y", strtotime($lat->date)) }}</span>
                     </div>
                 </div>
                 @endforeach
@@ -60,7 +62,9 @@
                 <h3>Tags</h3>
                 <ul class="list-unstyled">
                     @foreach($tags as $tag)
-                        <li><a class="a_hover_none" href="list_category.html">{{$tag->name}}</a></li>
+                        @if(count($tag->articles) > 0)
+                            <li><a class="a_hover_none" href="{{route('article.list.tag',$tag->id)}}">{{$tag->name}}</a></li>
+                        @endif
                     @endforeach
                 </ul>
             </div>

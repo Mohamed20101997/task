@@ -28,7 +28,7 @@
                 <div class="links_pages text-center text-md-left">
                     <ul class="list-unstyled mb-0">
                         <!-- create by each loop sass-->
-                        <li class="Home"><a class="a_hover_none" href="index.html">Home</a></li>
+                        <li class="Home"><a class="a_hover_none" href="{{route('home')}}">Home</a></li>
                         <li class="Advertise"><a class="a_hover_none" href="#">Advertise</a></li>
                         <li class="About"><a class="a_hover_none" href="contact_us_with_about.html">About</a></li>
                         <li class="contact"><a class="a_hover_none" href="contact_us_with_about.html">contact</a></li>
@@ -88,7 +88,7 @@
                         <ul class="list-unstyled mb-0 linksMainHeader">
                             <!-- create by sass loop-->
                             <li class="item_mainHeader">
-                                <a class="a_hover_none hover_el" href="#">Most viewed</a>
+                                <a class="a_hover_none hover_el" href="{{route('article.mostView')}}">Most viewed</a>
                             </li>
                             <li class="item_mainHeader li_drop_down">
                                 <a class="a_hover_none hover_el" href="#">Categories
@@ -98,10 +98,11 @@
                                 <!-- show if type = 1-->
                                 <div class="wrap_cate">
                                     <ul class="list-unstyled mb-0 box_drop_down">
-                                        <!-- create by sass loop-->
-                                        <li class="li_item"><a class="a_hover_none hover_el" href="#">Recent</a></li>
-                                        <li class="li_item"><a class="a_hover_none hover_el" href="#">Featured<span class="brand">current</span></a></li>
-                                        <li class="li_item"><a class="a_hover_none hover_el" href="#">Trending</a></li>
+                                       @foreach($Categories as $category)
+                                           @if(count($category->articles) > 0)
+                                                <li class="li_item"><a class="a_hover_none hover_el" href="{{route('article.list', $category->id)}}">{{$category->name}}</a></li>
+                                            @endif
+                                        @endforeach
                                     </ul>
                                     <div class="wrap_bloger">
                                         <!-- create by sass loop-->
@@ -125,10 +126,10 @@
                                 </div>
                             </li>
                             <li class="item_mainHeader">
-                                <a class="a_hover_none hover_el" href="#">Recent</a>
+                                <a class="a_hover_none hover_el" href="{{route('article.recent')}}">Recent</a>
                             </li>
                             <li class="item_mainHeader">
-                                <a class="a_hover_none hover_el" href="#">Featured</a>
+                                <a class="a_hover_none hover_el" href="{{route('article.featured')}}">Featured</a>
                             </li>
                             <li class="item_mainHeader">
                                 <a class="a_hover_none hover_el" href="#">Trending</a>
@@ -226,3 +227,31 @@
     </div>
 </header>
 <!-- end header-->
+<!-- start div overlay-->
+<div class="over_lay" tabIndex="-1"></div>
+<!-- end div overlay-->
+
+<!-- start form_report-->
+<div class="form_advertise" tabIndex="-1">
+    <div class="wrap_contact animation_comeFromTop">
+        <p>You may easily set up a contact form with plugin that fully supported by Berg. Below is the working form demo:</p>
+        <form action="">
+            <!-- create by sass loop-->
+            <div class="wrap_filde">
+                <label for="#1">Company Name</label>
+                <input type="text" name="" placeholder="techunique">
+            </div>
+            <!-- create by sass loop-->
+            <div class="wrap_filde">
+                <label for="#2">Email address</label>
+                <input type="email" name="" placeholder="john@example.com">
+            </div>
+            <div class="wrap_filde">
+                <label for="">Descrption</label>
+                <textarea name="" cols="40" rows="5" placeholder="Type your message"></textarea>
+            </div>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+</div>
+<!-- end form_report-->

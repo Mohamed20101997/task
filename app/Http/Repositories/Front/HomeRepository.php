@@ -5,6 +5,8 @@ use App\Http\Interfaces\Front\HomeInterface;
 use App\Models\Article;
 use App\Models\ArticleComment;
 use App\Models\ArticleView;
+use App\Models\Category;
+use App\models\Tag;
 use DB;
 
 class HomeRepository implements HomeInterface{
@@ -12,10 +14,14 @@ class HomeRepository implements HomeInterface{
     private $articleModel;
     private $articleViewModel;
     private $articleCommnetModel;
-    public function __construct(Article $article,ArticleView $articleView, ArticleComment $articleComment){
+    private $categoryModel;
+    private $tagModel;
+    public function __construct(Article $article,ArticleView $articleView, ArticleComment $articleComment, Category $category ,Tag $tag){
         $this->articleModel = $article;
         $this->articleViewModel = $articleView;
         $this->articleCommnetModel = $articleComment;
+        $this->categoryModel = $category;
+        $this->tagModel = $tag;
     }
 
     public function home()
@@ -88,5 +94,56 @@ class HomeRepository implements HomeInterface{
         }catch(\Exception $e){
             return redirect()->back()->with(['error'=>'there is problem please try again']);
         }
+    }
+
+    public function articleList($id)
+    {
+        $articles       = $this->articleModel::where([['status', 1],['category_id', $id]])->with('tags','category','author')->get();
+        $categories     = $this->categoryModel::where('id', '!=' ,$id)->get();
+        $categoryName   = $this->categoryModel::where('id', $id)->pluck('name')->first();
+        $latest         =  $this->articleModel::where('status', 1)->orderBy('date','ASC')->take(5)->get();
+
+        return view('front.list', compact('articles','categories', 'categoryName','latest'));
+    }
+
+    public function articleListTag($id)
+    {
+        $articles = $this->articleModel::where([['status', 1]])->whereHas('tags',function ($query) use($id){
+            $query->where('tag_id', $id);
+        })
+        ->with('tags','category','author')->get();
+        $tags           = $this->tagModel::where('id', '!=' ,$id)->get();
+        $tagName        = $this->tagModel::where('id', $id)->pluck('name')->first();
+        $latest         =  $this->articleModel::where('status', 1)->orderBy('date','ASC')->take(5)->get();
+
+        return view('front.listTag', compact('articles','tags', 'tagName','latest'));
+    }
+
+    public function mostView()
+    {
+        $articles       = $this->articleModel::where([['status', 1]])->orderBy('view','desc')->take(5)->paginate(5);
+        $latest         =  $this->articleModel::where('status', 1)->orderBy('date','ASC')->take(5)->get();
+        $name           = 'Most View';
+
+        return view('front.articles', compact('articles','name','latest'));
+
+    }
+
+    public function recent()
+    {
+        $articles       = $this->articleModel::where([['status', 1]])->orderBy('date','ASC')->paginate(5);
+        $latest         =  $this->articleModel::where('status', 1)->orderBy('date','ASC')->take(5)->get();
+        $name           = 'Recent';
+
+        return view('front.articles', compact('articles','name','latest'));
+    }
+
+    public function featured()
+    {
+        $articles       = $this->articleModel::where([['status', 1]])->inRandomOrder()->paginate(5);
+        $latest         =  $this->articleModel::where('status', 1)->orderBy('date','ASC')->take(5)->get();
+        $name           = 'Featured';
+
+        return view('front.articles', compact('articles','name','latest'));
     }
 }

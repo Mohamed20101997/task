@@ -11,4 +11,13 @@ class ArticleComment extends Model
     public function article(){
         return $this->belongsTo(Article::class, 'article_id');
     }
+
+
+    public function scopeWhenSearch($query , $search)
+    {
+        return $query->when($search , function($q) use ($search){
+            return $q->where('name' , 'like' , "%$search%") ;
+        });
+
+    } //end of scopeWhenSearch
 }

@@ -1,34 +1,6 @@
 @extends('layouts.front.app')
 
 @section('content')
-    <!-- start div overlay-->
-    <div class="over_lay" tabIndex="-1"></div>
-    <!-- end div overlay-->
-
-    <!-- start form_report-->
-    <div class="form_advertise" tabIndex="-1">
-        <div class="wrap_contact animation_comeFromTop">
-            <p>You may easily set up a contact form with plugin that fully supported by Berg. Below is the working form demo:</p>
-            <form action="">
-                <!-- create by sass loop-->
-                <div class="wrap_filde">
-                    <label for="#1">Company Name</label>
-                    <input type="text" name="" placeholder="techunique">
-                </div>
-                <!-- create by sass loop-->
-                <div class="wrap_filde">
-                    <label for="#2">Email address</label>
-                    <input type="email" name="" placeholder="john@example.com">
-                </div>
-                <div class="wrap_filde">
-                    <label for="">Descrption</label>
-                    <textarea name="" cols="40" rows="5" placeholder="Type your message"></textarea>
-                </div>
-                <button class="btn">Submit</button>
-            </form>
-        </div>
-    </div>
-    <!-- end form_report-->
 
     <!-- start section slider-->
     <section class="slider">
@@ -70,7 +42,7 @@
                                             <div class="wrap_info_blog"><a class="a_hover_none categore" href="{{route('article.blog',$feature->id)}}">{{$feature->category->name}}</a>
                                                 <h2><a class="a_hover_none" href="{{route('article.blog',$feature->id)}}">{{$feature->name}}</a></h2>
                                                 <ul class="list-unstyled mb-0 wrap_state">
-                                                    <li><span class="date">{{date("d-m-Y", strtotime($feature->date)) }}</span></li>
+                                                    <li><span class="date">{{date("M d , Y", strtotime($feature->date)) }}</span></li>
                                                     <li>
                                                         <!-- use FontAwsome Pro or Free-->
                                                         <span class="views"><i class="fas fa-chart-bar"></i> {{$feature->view}} views</span>
@@ -86,13 +58,13 @@
                                     <!-- create by lib owl-carousel-->
                                     <div class="silder_1 sub_slider owl-carousel">
                                         @foreach($articles as $article)
-                                            <div class="wrap_silder"><a class="over_lay_slider" href="a{{route('article.blog',$article->id)}}">
+                                            <div class="wrap_silder"><a class="over_lay_slider" href="{{route('article.blog',$article->id)}}">
                                                 </a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">Recent</a></span>
                                             <div class="wrap_img"><img class="def_img" src="{{$article->image_path}}" alt=""></div>
                                             <div class="wrap_info_blog"><a class="a_hover_none categore" href="a{{route('article.blog',$article->id)}}">{{$article->category->name}}</a>
-                                                <h2><a class="a_hover_none" href="a{{route('article.blog',$article->id)}}">{{$article->name}}</a></h2>
+                                                <h2><a class="a_hover_none" href="{{route('article.blog',$article->id)}}">{{$article->name}}</a></h2>
                                                 <ul class="list-unstyled mb-0 wrap_state">
-                                                    <li><span class="date">{{date("d-m-Y", strtotime($article->date)) }}</span></li>
+                                                    <li><span class="date">{{date("M d ,Y", strtotime($article->date)) }}</span></li>
                                                     <li>
                                                         <!-- use FontAwsome Pro or Free-->
                                                         <span class="views"><i class="fas fa-chart-bar"></i> {{$article->view}} views</span>
@@ -219,23 +191,23 @@
                     @foreach($posts as $post)
                         <div class="wrap_blog">
                             <div class="wrap_img"><span class="name_bdg">Pinned</span><a href="{{route('article.blog',$post->id)}}"><img class="def_img" src="{{$post->image_path}}"  alt="" srcset=""></a></div>
-                            <div class="wrap_info"><a class="categore" href="list_category.html">{{$post->category->name}}</a>
+                            <div class="wrap_info"><a class="categore" href="{{route('article.list',$post->category_id)}}">{{$post->category->name}}</a>
                                 <h2 class="mb-0"><a class="a_hover_none hover_el" href="{{route('article.blog',$post->id)}}">{{$post->name}}</a></h2>
                                 <ul class="list-unstyled mb-0 wrap_state">
                                     <li><span>By </span><a class="a_hover_none" href="#">{{$post->author->name}}</a></li>
-                                    <li><span class="date">{{date("d-m-Y", strtotime($article->date)) }}</span></li>
+                                    <li><span class="date">{{ date("M d ,Y", strtotime($article->date)) }}</span></li>
                                     <li>
                                         <span class="views"><i class="fas fa-chart-bar"></i> {{$post->view}} views</span>
                                     </li>
                                 </ul>
-                                <p class="mb-0">{{strip_tags(substr($post->description,0,81))}}....</p>
+                                <p class="mb-0">{{Str::limit(strip_tags($post->description),81,'...')}}</p>
                                 <!-- use FontAwsome Pro or Free-->
                                 <a class="read_more a_hover_none" href="{{route('article.blog',$post->id)}}"> read more <i class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
                         <div class="clear_fix"></div>
                     @endforeach
-                    <div class="load_more mb-4"><span class="hover_btn">load more posts</span></div>
+                    <a href="{{route('article.featured')}}"><div class="load_more mb-4"><span class="hover_btn">load more posts</span></div></a>
                 </div>
 
                 @include('front._side')
@@ -244,11 +216,6 @@
         </div>
     </section>
     <!-- end section list bloger-->
-
-    <!-- start floating btn contact us-->
-    <button class="btn btn_floating hover_btn"><i class="fas fa-user-headset"></i></button>
-    <!-- end floating btn contact us-->
-
 
 
 {{--    <!-- start box newslatter-->--}}

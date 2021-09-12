@@ -14,7 +14,7 @@
                             <h2>{{$article->name}}</h2>
                             <ul class="list-unstyled wrap_state">
                                 <li><span>By </span><a class="a_hover_none" href="user_profile.html">{{$article->author->name}}</a></li>
-                                <li><span class="date">{{date("d-m-Y", strtotime($article->date)) }}</span></li>
+                                <li><span class="date">{{date("M d,Y", strtotime($article->date)) }}</span></li>
                                 <li>
                                     <!-- use FontAwsome Pro or Free-->
                                     <span class="views"><i class="fas fa-chart-bar"></i> {{$article->view}} views</span>
@@ -49,10 +49,10 @@
                             </ul>
                         </div>
                         <div class="auther">
-                            <div class="wrap_user"><a href="user_profile.html"><img class="def_img" src="./image/user.png" alt="user"></a></div>
+                            <div class="wrap_user"><a href="user_profile.html"><img class="def_img" src="{{$article->author->image_path}}" alt="user"></a></div>
                             <div class="wrap_user_content">
-                                <h4><a class="a_hover_none hover_el" href="user_profile.html">Mark Scienstein</a></h4>
-                                <p>I'm a consultant, technology enthusiast, comic book reader, gamer, husband, father and all-around nerd.</p>
+                                <h4><a class="a_hover_none hover_el" href="user_profile.html">{{$article->author->name}}</a></h4>
+                                <p>{!! $article->author->brief !!}</p>
                                 <ul class="list-unstyled mb-0 wrap_social">
                                     <li><a class="a_hover_none hover_el" href="#"><i class="fas fa-globe-asia"></i></a></li>
                                     <li><a class="a_hover_none hover_el" href="#"><i class="fab fa-facebook"></i></a></li>
@@ -88,7 +88,7 @@
                                     <div class="wrap_info_blog"><a class="categore" href="list_category.html">{{$relate->category->name}}</a>
                                         <h2><a href="{{route('article.blog',$relate->id)}}">{{$relate->name}}</a></h2>
                                         <ul class="list-unstyled mb-0 wrap_state">
-                                            <li><span class="date">{{date("d-m-Y", strtotime($relate->date)) }}</span></li>
+                                            <li><span class="date">{{date("M d,Y", strtotime($relate->date)) }}</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -105,19 +105,31 @@
                                     <!-- use grid system bootstrap 4-->
                                     <input type="hidden" name="article_id" value="{{$article->id}}">
                                     <div class="col-12 wrap_textarea">
-                                        <textarea name="comment" rows="4" placeholder="Type your cpmment"></textarea>
+                                        <textarea name="comment" rows="4" placeholder="Type your comment"></textarea>
+                                        @error('comment')
+                                            <p class="text-danger">{{$message}}</p>
+                                        @enderror
                                     </div>
                                     <!-- use grid system bootstrap 4-->
                                     <div class="col-sm-12 col-md-6 col-lg-4 wrap_input">
                                         <input name="name" type="text" placeholder="Name*">
+                                        @error('name')
+                                            <p class="text-danger">{{$message}}</p>
+                                        @enderror
                                     </div>
                                     <!-- use grid system bootstrap 4-->
                                     <div class="col-sm-12 col-md-6 col-lg-4 wrap_input">
                                         <input name="email" type="email" placeholder="Email*">
+                                        @error('email')
+                                            <p class="text-danger">{{$message}}</p>
+                                        @enderror
                                     </div>
                                     <!-- use grid system bootstrap 4-->
                                     <div class="col-sm-12 col-lg-4 wrap_input">
                                         <input name="website" type="url" placeholder="Website">
+                                        @error('website')
+                                            <p class="text-danger">{{$message}}</p>
+                                        @enderror
                                     </div>
                                     <!-- use grid system bootstrap 4-->
                                     <div class="col-12">
@@ -135,7 +147,7 @@
                             <div class="auther">
                             <div class="wrap_user"><i class="fa fa-comments-alt fa-1x"></i></div>
                             <div class="wrap_user_content">
-                                <h4>{{$comment->name}} : {{$comment->email}}</h4>
+                                <h4>{{$comment->name}}</h4>
                                 <span>{{$comment->created_at->toFormattedDateString()}}</span>
                                 <p>{{$comment->comment}}</p>
                             </div>

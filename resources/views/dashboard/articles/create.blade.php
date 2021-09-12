@@ -48,7 +48,7 @@
                         {{-- date --}}
                         <div class="form-group">
                             <label>Date</label>
-                            <input type="datetime-local" name="date" class="form-control" value="{{old('date')}}">
+                            <input type="datetime-local" name="date" class="form-control" value="{{old('date',\Carbon\Carbon::now()->format('Y-m-d\TH:i'))}}">
                             @error('date')
                             <div class="text-danger">{{$message}}</div>
                             @enderror

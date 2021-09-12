@@ -29,6 +29,12 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin'], function () {
 
     Route::resource('article', 'ArticleController')->except('show');
 
+    Route::resource('comment', 'CommentController')->except('edit','store','update','create');
+
+    Route::get('setting', 'SettingController@index')->name('setting.show');
+
+    Route::post('setting', 'SettingController@edit')->name('setting.edit');
+
 });  /** End of Route Group  */
 
 
