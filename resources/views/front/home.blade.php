@@ -43,11 +43,11 @@
                                     @if($article->type->name == 'trending')
                                         <div class="wrap_silder"><a class="over_lay_slider" href="artical_blog.html">
                                             </a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">Trending</a></span>
-                                            <div class="wrap_img"><img width="200px" class="def_img" src="{{$article->image_path}}" alt=""></div>
-                                            <div class="wrap_info_blog"><a class="a_hover_none categore" href="artical_blog.html">mobile</a>
-                                                <h2><a class="a_hover_none" href="artical_blog.html">Flutter and Fuchsia, the death of React & Android?</a></h2>
+                                            <div class="wrap_img"><img  class="def_img" src="{{$article->image_path}}" alt=""></div>
+                                            <div class="wrap_info_blog"><a class="a_hover_none categore" href="artical_blog.html">{{$article->category->name}}</a>
+                                                <h2><a class="a_hover_none" href="artical_blog.html">{{$article->title}}</a></h2>
                                                 <ul class="list-unstyled mb-0 wrap_state">
-                                                    <li><span class="date">june 6, 2019</span></li>
+                                                    <li><span class="date">{{}}</span></li>
                                                     <li>
                                                         <!-- use fontAwsome 5--><span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
                                                     </li>

@@ -5,114 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd08c67c-590d-484b-971e-62799a4a6a17" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Interfaces/Front/HomeInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Repositories/Front/HomeRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/css/all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/css/bootstrap-editor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/css/main.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/css/owl.carousel.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/css/owl.theme.default.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/css/tagify.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/admin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/artical.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/bg_ask_me.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/blog.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/blog_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/blog_222.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/blogger_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/cate_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/cate_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/cate_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/fn-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/last_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/last_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/last_post.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/list_cate.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/logo.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/s_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/s_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/s_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/s_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/tm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/image/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/js/jQuery.tagify.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/js/jquery.nicescroll.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/js/owl.carousel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/js/popper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/js/tagify.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-brands-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-brands-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-brands-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-light-300.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-light-300.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-light-300.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-light-300.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-light-300.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/._fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-light-300.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-light-300.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-light-300.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-light-300.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-light-300.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front/webfonts/fa-solid-900.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Interfaces/FrontInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/ArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/FrontRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ArticleRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ArticleRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ArticleUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ArticleUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ArticleTags.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ArticleTags.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServicesProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServicesProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/TypeSeed.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TypeSeed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/front/assets/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/front/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/front/js/scripts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/articles/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/articles/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/articles/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/articles/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/articles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/articles/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/_side.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,6 +211,8 @@
       <workItem from="1630845492178" duration="1942000" />
       <workItem from="1631047131592" duration="741000" />
       <workItem from="1631099674145" duration="9414000" />
+      <workItem from="1631179577119" duration="545000" />
+      <workItem from="1631187327182" duration="2791000" />
     </task>
     <servers />
   </component>
