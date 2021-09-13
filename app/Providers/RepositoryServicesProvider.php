@@ -38,6 +38,11 @@ class RepositoryServicesProvider extends ServiceProvider
             'App\Http\Interfaces\CommentInterface',
             'App\Http\Repositories\CommentRepository'
         );
+
+        $this->app->bind(
+            'App\Http\Interfaces\Front\SettingInterface',
+            'App\Http\Repositories\Front\SettingRepository'
+        );
         $this->app->bind(
             'App\Http\Interfaces\SettingInterface',
             'App\Http\Repositories\SettingRepository'

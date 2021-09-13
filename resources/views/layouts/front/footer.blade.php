@@ -6,25 +6,34 @@
             <!-- used grid system botstrap 4-->
             <div class="col-sm-12 col-md-12 col-lg-4 about_site order-3 order-lg-1">
                 <div class="wrap_logo">
-                    <a class="a_hover_none" href="index.html">
-                        <img class="def_img" src="{{asset('front/image/fn-logo.png')}}" alt="logo" srcset="">
-                        <span>Trabelshot</span>
+                    <a class="a_hover_none" href="{{route('home')}}">
+                        <img class="def_img" src="{{$setting->image_path}}" alt="logo" srcset="">
+                        <span>{{$setting->site_name}}</span>
                     </a>
 
                 </div>
-                <p class="mb-0">About text goes here, you can put a few lines that describe about your site to your visitors.</p>
+                <p class="mb-0">{{$setting->description}}</p>
                 <ul class="list-unstyled mb-0">
                     <!-- create by sass loop-->
                     <!-- use icon fontAwsome 5-->
-                    <li><a class="a_hover_none hover_el" href="#"><i class="fab fa-facebook"></i></a></li>
-                    <!-- use icon fontAwsome 5-->
-                    <li><a class="a_hover_none hover_el" href="#"><i class="fab fa-twitter"></i></a></li>
-                    <!-- use icon fontAwsome 5-->
-                    <li><a class="a_hover_none hover_el" href="#"><i class="fab fa-instagram"></i></a></li>
-                    <!-- use icon fontAwsome 5-->
-                    <li><a class="a_hover_none hover_el" href="#"><i class="fab fa-youtube"></i></a></li>
-                    <!-- use icon fontAwsome 5-->
-                    <li><a class="a_hover_none hover_el" href="#"><i class="fab fa-linkedin"></i></a></li>
+                    @if(!empty($linkes['facebook']))
+                        <li><a class="a_hover_none hover_el" href="{{ $linkes['facebook'] }}"><i class="fab fa-facebook"></i></a></li>
+                    @endif
+                    @if(!empty($linkes['twitter']))
+                        <li><a class="a_hover_none hover_el" href="{{ $linkes['twitter'] }}"><i class="fab fa-twitter"></i></a></li>
+                    @endif
+
+                    @if(!empty($linkes['instagram']))
+                        <li><a class="a_hover_none hover_el" href="{{ $linkes['instagram'] }}"><i class="fab fa-instagram"></i></a></li>
+                    @endif
+
+                    @if(!empty($linkes['youtube']))
+                        <li><a class="a_hover_none hover_el" href="{{ $linkes['youtube'] }}"><i class="fab fa-youtube"></i></a></li>
+                    @endif
+
+                    @if(!empty($linkes['linkedin']))
+                        <li><a class="a_hover_none hover_el" href="{{ $linkes['linkedin'] }}"><i class="fab fa-linkedin"></i></a></li>
+                    @endif
                 </ul>
             </div>
             <!-- used grid system botstrap 4-->
@@ -77,13 +86,13 @@
             <div class="col-sm-12 pre_footer">
                 <ul class="list-unstyled d-none d-md-block">
                     <!-- create by sass loop-->
-                    <li><a class="a_hover_none hover_el" href="terms_and_conditions.html">Disclaimer</a></li>
-                    <li><a class="a_hover_none hover_el" href="terms_and_conditions.html">Terms &amp; Conditions</a></li>
-                    <li><a class="a_hover_none hover_el" href="terms_and_conditions.html">Privacy Policy</a></li>
-                    <li><a class="a_hover_none hover_el" href="ask_me.html">community</a></li>
-                    <li><a class="a_hover_none hover_el" href="terms_and_conditions.html">3d calculator</a></li>
+                    <li><a class="a_hover_none hover_el" href="{{route('setting.term')}}">Terms &amp; Conditions</a></li>
+                    <li><a class="a_hover_none hover_el" href="{{route('setting.privacy')}}">Privacy Policy</a></li>
+                    <li><a class="a_hover_none hover_el" href="{{route('setting.about')}}">About</a></li>
+                    <li><a class="a_hover_none hover_el" href="#">3d calculator</a></li>
+                    <li><a class="a_hover_none hover_el" href="#">community</a></li>
                 </ul>
-                <div class="copy_right text-left text-md-center">© 2021 Scienstein. All rights reserved.</div>
+                <div class="copy_right text-left text-md-center">© 2021 Techunique. All rights reserved.</div>
             </div>
         </div>
     </div>

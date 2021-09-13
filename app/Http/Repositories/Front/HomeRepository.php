@@ -2,6 +2,7 @@
 namespace App\Http\Repositories\Front;
 
 use App\Http\Interfaces\Front\HomeInterface;
+use App\Http\Traits\ArticleTrait;
 use App\Models\Article;
 use App\Models\ArticleComment;
 use App\Models\ArticleView;
@@ -10,6 +11,8 @@ use App\models\Tag;
 use DB;
 
 class HomeRepository implements HomeInterface{
+
+    use ArticleTrait;
 
     private $articleModel;
     private $articleViewModel;
@@ -31,8 +34,10 @@ class HomeRepository implements HomeInterface{
         $featured   = $model->take(10)->get();
         $posts      = $model->orderBy('date','ASC')->take(10)->get();
 
+        $trends = $this->trend(10);
+        $articleTrend = $this->trend(3);
 
-        return view('front.home', compact('articles','featured','posts'));
+        return view('front.home', compact('articles','featured','posts','trends','articleTrend'));
     }
 
 
@@ -143,6 +148,15 @@ class HomeRepository implements HomeInterface{
         $articles       = $this->articleModel::where([['status', 1]])->inRandomOrder()->paginate(5);
         $latest         =  $this->articleModel::where('status', 1)->orderBy('date','ASC')->take(5)->get();
         $name           = 'Featured';
+
+        return view('front.articles', compact('articles','name','latest'));
+    }
+
+    public function trends()
+    {
+        $articles = $this->trend(10);
+        $latest =  $this->articleModel::where('status', 1)->orderBy('date','ASC')->take(5)->get();
+        $name   = 'Trending';
 
         return view('front.articles', compact('articles','name','latest'));
     }

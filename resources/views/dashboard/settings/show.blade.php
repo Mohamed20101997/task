@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="tile mb4">
-                <form action="{{route('setting.edit')}}" method="post">
+                <form action="{{route('setting.edit')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-4">
@@ -86,7 +86,7 @@
                             {{-- site name --}}
                             <div class="form-group">
                                 <label>Facebook</label>
-                                <input type="url" name="social_links[facebook]" class="form-control" value="{{ old("social_links[facebook]",isset($setting->social_links->facebook) ? $setting->social_links->facebook: '') }}">
+                                <input type="url" name="social_links[facebook]" class="form-control" value="{{ old("social_links[facebook]",!empty($linkes['facebook']) ? $linkes['facebook'] : '') }}">
                                 @error("social_links[facebook]")
                                     <div class="text-danger">{{$message}}</div>
                                 @enderror
@@ -96,7 +96,7 @@
                             {{-- site name --}}
                             <div class="form-group">
                                 <label>Youtube</label>
-                                <input type="url" name="social_links[youtube]" class="form-control" value="{{ old("social_links[youtube]",isset($setting->social_links->youtube) ? $setting->social_links->youtube: '') }}">
+                                <input type="url" name="social_links[youtube]" class="form-control" value="{{ old("social_links[youtube]",!empty($linkes['youtube']) ? $linkes['youtube']: '') }}">
                                 @error("social_links[youtube]")
                                     <div class="text-danger">{{$message}}</div>
                                 @enderror
@@ -106,7 +106,7 @@
                             {{-- site name --}}
                             <div class="form-group">
                                 <label>Instagram</label>
-                                <input type="url" name="social_links[instagram]" class="form-control" value="{{ old("social_links[instagram]",isset($setting->social_links->instagram) ? $setting->social_links->instagram: '') }}">
+                                <input type="url" name="social_links[instagram]" class="form-control" value="{{ old("social_links[instagram]",!empty($linkes['instagram']) ? $linkes['instagram']: '') }}">
                                 @error("social_links[instagram]")
                                     <div class="text-danger">{{$message}}</div>
                                 @enderror
@@ -118,7 +118,7 @@
                             {{-- site name --}}
                             <div class="form-group">
                                 <label>LinkedIn</label>
-                                <input type="url" name="social_links[linkedin]" class="form-control" value="{{ old("social_links[linkedin]",isset($setting->social_links->linkedin) ? $setting->social_links->linkedin: '') }}">
+                                <input type="url" name="social_links[linkedin]" class="form-control" value="{{ old("social_links[linkedin]",!empty($linkes['linkedin']) ? $linkes['linkedin']: '') }}">
                                 @error("social_links[linkedin]")
                                     <div class="text-danger">{{$message}}</div>
                                 @enderror
@@ -128,7 +128,7 @@
                             {{-- site name --}}
                             <div class="form-group">
                                 <label>Twitter</label>
-                                <input type="url" name="social_links[twitter]" class="form-control" value="{{ old("social_links[twitter]",isset($setting->social_links->twitter) ? $setting->social_links->twitter: '') }}">
+                                <input type="url" name="social_links[twitter]" class="form-control" value="{{ old("social_links[twitter]",!empty($linkes['twitter'] ) ? $linkes['twitter'] : '') }}">
                                 @error("social_links[twitter]")
                                     <div class="text-danger">{{$message}}</div>
                                 @enderror
@@ -138,7 +138,7 @@
                             {{-- site name --}}
                             <div class="form-group">
                                 <label>Gmail</label>
-                                <input type="email" name="social_links[gmail]" class="form-control" value="{{ old("social_links[gmail]",isset($setting->social_links->gmail) ? $setting->social_links->gmail: '') }}">
+                                <input type="email" name="social_links[gmail]" class="form-control" value="{{ old("social_links[gmail]",!empty($linkes['gmail']) ? $linkes['gmail']: '') }}">
                                 @error("social_links[gmail]")
                                     <div class="text-danger">{{$message}}</div>
                                 @enderror

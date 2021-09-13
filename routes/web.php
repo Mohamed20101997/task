@@ -13,6 +13,13 @@ Route::group(['prefix'=>'article/'], function () {
     Route::get('most-view','HomeController@mostView')->name('article.mostView');
     Route::get('recent','HomeController@recent')->name('article.recent');
     Route::get('featured','HomeController@featured')->name('article.featured');
+    Route::get('trend','HomeController@trends')->name('article.trend');
+});  /** End of Route Group  */
 
+Route::group(['prefix'=>'setting/'], function () {
+    Route::get('term','SettingController@term')->name('setting.term');
+    Route::get('privacy','SettingController@term')->name('setting.privacy');
+    Route::get('about','SettingController@about')->name('setting.about');
+    Route::get('contact','SettingController@contact')->name('setting.contact');
 });  /** End of Route Group  */
 

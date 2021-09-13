@@ -30,9 +30,8 @@
                         <!-- create by each loop sass-->
                         <li class="Home"><a class="a_hover_none" href="{{route('home')}}">Home</a></li>
                         <li class="Advertise"><a class="a_hover_none" href="#">Advertise</a></li>
-                        <li class="About"><a class="a_hover_none" href="contact_us_with_about.html">About</a></li>
-                        <li class="contact"><a class="a_hover_none" href="contact_us_with_about.html">contact</a></li>
-                        <li class="404 not found"><a class="a_hover_none" href="404_not_found.html">404 not found</a></li>
+                        <li class="About"><a class="a_hover_none" href="{{route('setting.about')}}">About</a></li>
+                        <li class="contact"><a class="a_hover_none" href="{{route('setting.about')}}">contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,17 +39,31 @@
             <div class="col-sm-12 col-md-6">
                 <div class="links_social text-center text-md-right">
                     <ul class="list-unstyled mb-0">
-                        <!-- create by each loop sass-->
-                        <!-- link have classes fontawsome 5 Free-->
-                        <li><a class="a_hover_none" href="#"><i class="fab fa-facebook"></i></a></li>
-                        <!-- link have classes fontawsome 5 Free-->
-                        <li><a class="a_hover_none" href="#"><i class="fab fa-twitter"></i></a></li>
-                        <!-- link have classes fontawsome 5 Free-->
-                        <li><a class="a_hover_none" href="#"><i class="fab fa-instagram"></i></a></li>
-                        <!-- link have classes fontawsome 5 Free-->
-                        <li><a class="a_hover_none" href="#"><i class="fab fa-youtube"></i></a></li>
-                        <!-- link have classes fontawsome 5 Free-->
-                        <li><a class="a_hover_none" href="#"><i class="fab fa-linkedin"></i></a></li>
+                        @if(!empty($linkes['facebook']))
+                            <li>
+                                <a class="a_hover_none" href="{{ $linkes['facebook'] }}" ><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                        @endif
+                        @if(!empty($linkes['twitter']))
+                            <li>
+                                <a class="a_hover_none" href="{{ $linkes['twitter'] }}" ><i class="fab fa-twitter"></i></a>
+                            </li>
+                        @endif
+                        @if(!empty($linkes['instagram']))
+                            <li>
+                                <a class="a_hover_none" href="{{ $linkes['instagram'] }}" ><i class="fab fa-twitter"></i></a>
+                            </li>
+                        @endif
+                        @if(!empty($linkes['youtube']))
+                            <li>
+                                <a class="a_hover_none"  href="{{$linkes['youtube'] }}"><i class="fab fa-youtube"></i></a>
+                            </li>
+                        @endif
+                        @if(!empty($linkes['linkedin']))
+                            <li>
+                                <a class="a_hover_none" href="{{$linkes['linkedin'] }}"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -76,14 +89,14 @@
                     <i class="fas fa-bars btn_sm_navbar"></i>
                 </div>
                 <div class="wrap_logo d-block d-lg-flex text-center">
-                    <img class="def_img d-none d-lg-block" src="./image/fn-logo.png" alt="" srcset="">
-                    <span>Trabelshot</span>
+                    <img class="def_img d-none d-lg-block" src="{{$setting->image_path}}" alt="" srcset="">
+                    <span>{{$setting->site_name}}</span>
                 </div>
                 <nav class="nav_bar" tabIndex="-1">
                     <div class="wrap_2_item">
                         <div class="wrap_logo d-flex d-lg-none">
                             <img class="def_img" src="./image/fn-logo.png" alt="" srcset="">
-                            <span>Trabelshot</span>
+                            <span>{{$setting->site_name}}</span>
                         </div>
                         <ul class="list-unstyled mb-0 linksMainHeader">
                             <!-- create by sass loop-->
@@ -132,7 +145,7 @@
                                 <a class="a_hover_none hover_el" href="{{route('article.featured')}}">Featured</a>
                             </li>
                             <li class="item_mainHeader">
-                                <a class="a_hover_none hover_el" href="#">Trending</a>
+                                <a class="a_hover_none hover_el" href="{{route('article.trend')}}">Trending</a>
                             </li>
                             <li class="item_mainHeader">
                                 <a class="a_hover_none hover_el" href="ask_me.html">community</a>
@@ -141,34 +154,38 @@
                     </div>
                     <div class="social d-block d-lg-none">
                         <ul class="list-unstyled mb-0">
-                            <!-- create by sass loop-->
-                            <li>
-                                <a class="a_hover_none hover_el" href="#">
-
-                                    <i class="fab fa-facebook"></i></a></li>
-                            <li>
-                                <a class="a_hover_none hover_el" href="#">
-
-                                    <i class="fab fa-twitter"></i></a></li>
-                            <li>
-                                <a class="a_hover_none hover_el" href="#">
-
-                                    <i class="fab fa-instagram"></i></a></li>
-                            <li>
-                                <a class="a_hover_none hover_el" href="#">
-
-                                    <i class="fab fa-youtube"></i></a></li>
-                            <li>
-                                <a class="a_hover_none hover_el" href="#">
-
-                                    <i class="fab fa-linkedin"></i></a></li>
+                            @if(!empty($linkes['facebook']))
+                                <li>
+                                    <a class="a_hover_none hover_el" href="{{ $linkes['facebook'] }}" ><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                            @endif
+                            @if(!empty($linkes['twitter']))
+                                <li>
+                                    <a class="a_hover_none hover_el" href="{{ $linkes['twitter'] }}" ><i class="fab fa-twitter"></i></a>
+                                </li>
+                            @endif
+                            @if(!empty($linkes['instagram']))
+                                <li>
+                                    <a class="a_hover_none hover_el" href="{{ $linkes['instagram'] }}" ><i class="fab fa-twitter"></i></a>
+                                </li>
+                            @endif
+                            @if(!empty($linkes['youtube']))
+                                <li>
+                                    <a class="a_hover_none hover_el"  href="{{$linkes['youtube'] }}"><i class="fab fa-youtube"></i></a>
+                                </li>
+                            @endif
+                            @if(!empty($linkes['linkedin']))
+                                <li>
+                                    <a class="a_hover_none hover_el" href="{{$linkes['linkedin'] }}"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                     <div class="aside_lg_screen d-none d-lg-flex">
                         <div class="wrap_2_item">
                             <div class="wrap_logo d-flex">
                                 <img class="def_img" src="./image/fn-logo.png" alt="" srcset="">
-                                <span>Trabelshot</span>
+                                <span>{{$setting->site_name}}</span>
                             </div>
                             <ul class="list-unstyled mb-0 linksMainHeader">
                                 <!-- create by sass loop-->

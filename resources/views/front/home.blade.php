@@ -11,19 +11,22 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-6 main_slider mb-3 mb-md-0">
                             <div class="silder_1 owl-carousel">
-                                <div class="wrap_silder"><a class="over_lay_slider" href="#">
-                                    </a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="#">Trending</a></span>
-                                    <div class="wrap_img"><img width="200px" class="def_img" src="" alt=""></div>
-                                    <div class="wrap_info_blog"><a class="a_hover_none categore" href="#">mobile</a>
-                                        <h2><a class="a_hover_none" href="#">Flutter and Fuchsia, the death of React & Android?</a></h2>
-                                        <ul class="list-unstyled mb-0 wrap_state">
-                                            <li><span class="date">june 6, 2019</span></li>
-                                            <li>
-                                                <!-- use fontAwsome 5--><span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                            </li>
-                                        </ul>
+                                @foreach($articleTrend as $trend)
+                                    <div class="wrap_silder"><a class="over_lay_slider" href="#">
+                                        </a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="#">Trending</a></span>
+                                        <div class="wrap_img"><img width="200px" class="def_img" src="{{$trend->image_path}}" alt=""></div>
+                                        <div class="wrap_info_blog"><a class="a_hover_none categore" href="{{route('article.blog',$trend->id)}}">{{$trend->category->name}}</a>
+                                            <h2><a class="a_hover_none" href="{{route('article.blog',$trend->id)}}">{{$trend->name}}</a></h2>
+                                            <ul class="list-unstyled mb-0 wrap_state">
+                                                <li><span class="date">{{date("M d , Y", strtotime($trend->date)) }}</span></li>
+                                                <li>
+                                                    <!-- use FontAwsome Pro or Free-->
+                                                    <span class="views"><i class="fas fa-chart-bar"></i> {{$trend->view}} views</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
 
@@ -114,59 +117,22 @@
                 </div>
                 <!-- used grid system bootstap 4-->
                 <div class="col-12 sliders_blogs owl-carousel owl-theme">
-                    <!-- create by sass loop-->
-                    <div class="wrap_blog">
-                        <div class="wrap_img"><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/blog.jpg')}}" alt=""></a></div>
-                        <div class="wrap_info_blog"><a class="categore" href="list_category.html">mobile</a>
-                            <h2><a href="artical_blog.html"> How to Stop Checking Your Phone Like an Addict</a></h2>
+
+                    @foreach($trends as $trend)
+                        <div class="wrap_blog">
+                        <div class="wrap_img"><a href="{{route('article.blog',$trend->id)}}"><img class="def_img" src="{{$trend->image_path}}" alt="{{$trend->name}}"></a></div>
+                        <div class="wrap_info_blog"><a class="categore" href="{{route('article.list',$trend->category_id)}}">{{$trend->category->name}}</a>
+                            <h2><a href="{{route('article.blog',$trend->id)}}">{{$trend->category->name}}</a></h2>
                             <ul class="list-unstyled mb-0 wrap_state">
-                                <li><span class="date">june 6, 2019</span></li>
+                                <li><span class="date">{{ date("M d ,Y", strtotime($trend->date)) }}</span></li>
                                 <li>
                                     <!-- use FontAwsome Pro or Free-->
-                                    <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
+                                    <span class="views"><i class="fas fa-chart-bar"></i> {{$trend->view}} views</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="wrap_blog">
-                        <div class="wrap_img"><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/blog.jpg')}}" alt=""></a></div>
-                        <div class="wrap_info_blog"><a class="categore" href="list_category.html">mobile</a>
-                            <h2><a href="artical_blog.html"> How to Stop Checking Your Phone Like an Addict</a></h2>
-                            <ul class="list-unstyled mb-0 wrap_state">
-                                <li><span class="date">june 6, 2019</span></li>
-                                <li>
-                                    <!-- use FontAwsome Pro or Free-->
-                                    <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="wrap_blog">
-                        <div class="wrap_img"><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/blog.jpg')}}" alt=""></a></div>
-                        <div class="wrap_info_blog"><a class="categore" href="list_category.html">mobile</a>
-                            <h2><a href="artical_blog.html"> How to Stop Checking Your Phone Like an Addict</a></h2>
-                            <ul class="list-unstyled mb-0 wrap_state">
-                                <li><span class="date">june 6, 2019</span></li>
-                                <li>
-                                    <!-- use FontAwsome Pro or Free-->
-                                    <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="wrap_blog">
-                        <div class="wrap_img"><a href="artical_blog.html"><img class="def_img" src="{{asset('front/image/blog.jpg')}}" alt=""></a></div>
-                        <div class="wrap_info_blog"><a class="categore" href="list_category.html">mobile</a>
-                            <h2><a href="artical_blog.html"> How to Stop Checking Your Phone Like an Addict</a></h2>
-                            <ul class="list-unstyled mb-0 wrap_state">
-                                <li><span class="date">june 6, 2019</span></li>
-                                <li>
-                                    <!-- use FontAwsome Pro or Free-->
-                                    <span class="views"><i class="fas fa-chart-bar"></i> 2.4k views</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

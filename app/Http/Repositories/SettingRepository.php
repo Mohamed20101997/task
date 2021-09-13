@@ -16,19 +16,40 @@ class SettingRepository implements SettingInterface {
     public function index()
     {
         $setting = $this->settingModel::first();
-        $setting->social_links = json_decode($setting->social_links);
-        return view('dashboard.settings.show', compact('setting'));
+        if($setting){
+        $linkes = json_decode($setting->social_links, true);
+        }else{
+            $linkes =[];
+        }
+
+        return view('dashboard.settings.show', compact('linkes','setting'));
     }//end of index function
 
     public function edit($request)
     {
-        try{
+//        try{
             $data = $request->except('_token');
             $data['social_links'] = json_encode($request->social_links);
+
+
             $setting = $this->settingModel::first();
             if($setting){
+
+                if($request->has('logo'))
+                {
+                    \Storage::disk('public')->delete($setting->logo);
+                    \Image::make($request->logo)->save(storage_path('app/public/images/'. $request->logo->hashName()));
+                    $data['logo'] = $request->logo->hashName();
+
+                } //end of if
                 $this->settingModel::where('id',$setting->id)->update($data);
             }else{
+                if($request->logo)
+                {
+                    \Image::make($request->logo)->save(storage_path('app/public/images/'. $request->logo->hashName()));
+                    $data['logo'] = $request->logo->hashName();
+                }
+
                 $this->settingModel::create($data);
             }
 
@@ -37,9 +58,9 @@ class SettingRepository implements SettingInterface {
 
             return redirect()->back();
 
-        }catch(\Exception $e){
-            return redirect()->back()->with(['error'=>'there is problem please try again']);
-        }
+//        }catch(\Exception $e){
+//            return redirect()->back()->with(['error'=>'there is problem please try again']);
+//        }
 
     } // end of edit function
 

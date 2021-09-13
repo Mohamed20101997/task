@@ -60,6 +60,10 @@ class HomeController extends Controller
     {
         return $this->HomeInterface->featured();
     }
+    public function trends()
+    {
+        return $this->HomeInterface->trends();
+    }
 
 
 }

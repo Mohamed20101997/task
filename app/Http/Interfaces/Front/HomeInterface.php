@@ -14,5 +14,6 @@ interface HomeInterface{
     public function mostView();
     public function recent();
     public function featured();
+    public function trends();
 
 }
