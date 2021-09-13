@@ -6,6 +6,6 @@ interface SettingInterface{
 
     public function index();
 
-    public function edit($request,$id);
+    public function edit($request);
 
 }

@@ -21,9 +21,9 @@ class SettingController extends Controller
         return $this->settingInterface->index();
     }
 
-    public function edit(Request $request, $id)
+    public function edit(Request $request)
     {
-        return $this->settingInterface->edit($request, $id);
+        return $this->settingInterface->edit($request);
     }
 
 

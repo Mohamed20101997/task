@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <div class="wrap_post">
-                    <div class="wrap_img"><img class="def_img" src="{{$comment->article->image_path}}" alt="">
+                    <div class="wrap_img"><img height= '200px' class="def_img" src="{{$comment->article->image_path}}" alt="">
                     </div>
                     <div class="wrap_info">
                         <h4>{{$comment->article->name}}
