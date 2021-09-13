@@ -10,13 +10,33 @@ $articles = \App\Models\Article::where('status', 1)->orderBy('date','ASC')->take
                 <div class="wrap">
                     <div class="box_social mb-4">
                         <h3>Social Links</h3>
+                        @php
+                            $setting = \App\Models\Setting::first();
+                               if($setting){
+                               $linkes = json_decode($setting->social_links, true);
+                               }else{
+                                   $linkes =[];
+                               }
+                        @endphp
                         <ul class="list-unstyled mb-0">
-                            <!-- create by sass loop-->
-                            <li><a class="hover_el a_hover_none" href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a class="hover_el a_hover_none" href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a class="hover_el a_hover_none" href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a class="hover_el a_hover_none" href="#"><i class="fab fa-youtube"></i></a></li>
-                            <li><a class="hover_el a_hover_none" href="#"><i class="fab fa-linkedin"></i></a></li>
+                            @if(!empty($linkes['facebook']))
+                                <li><a class="hover_el a_hover_none" href="{{ $linkes['facebook'] }}"><i class="fab fa-facebook"></i></a></li>
+                            @endif
+                            @if(!empty($linkes['twitter']))
+                                <li><a class="hover_el a_hover_none" href="{{ $linkes['twitter'] }}"><i class="fab fa-twitter"></i></a></li>
+                            @endif
+
+                            @if(!empty($linkes['instagram']))
+                                <li><a class="hover_el a_hover_none" href="{{ $linkes['instagram'] }}"><i class="fab fa-instagram"></i></a></li>
+                            @endif
+
+                            @if(!empty($linkes['youtube']))
+                                <li><a class="hover_el a_hover_none" href="{{ $linkes['youtube'] }}"><i class="fab fa-youtube"></i></a></li>
+                            @endif
+
+                            @if(!empty($linkes['linkedin']))
+                                <li><a class="hover_el a_hover_none" href="{{ $linkes['linkedin'] }}"><i class="fab fa-linkedin"></i></a></li>
+                            @endif
                         </ul>
                     </div>
                     <div class="latest_posts mb-4">
@@ -36,10 +56,18 @@ $articles = \App\Models\Article::where('status', 1)->orderBy('date','ASC')->take
                     <h2 class="_3d hover_btn"><a class="a_hover_none d-block" href="ask_me.html">3d calculator</a></h2>
                     <h3>Newsletter</h3>
                     <p>Subscribe to our newsletter and get our newest updates right on your email.</p>
-                    <form action="">
-                        <input type="text" name="" placeholder="Your email address">
+                    <form action="{{route('setting.news')}}" method="post">
+                        @csrf
+                        @method('post')
+                        <input type="text" name="email" placeholder="Your email address" required>
+                        @error('email')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
                         <label for="">
-                            <input class="v-mid" type="checkbox" name=""><a class="v-mid a_hover_none" href="#">I agree to the terms & conditions</a>
+                            <input class="v-mid" type="checkbox" name="agree" required><a class="v-mid a_hover_none" href="#">I agree to the terms & conditions</a>
+                            @error('agree')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </label>
                         <button class="hover_btn">Subscribe</button>
                     </form>

@@ -2,13 +2,19 @@
 namespace App\Http\Repositories\Front;
 
 use App\Http\Interfaces\Front\SettingInterface;
+use App\Models\Contact;
+use App\Models\NewsLetter;
 use App\Models\Setting;
 
 class SettingRepository implements SettingInterface {
 
     private $settingModel;
-    public function __construct(Setting $setting){
+    private $contactModel;
+    private $newsModel;
+    public function __construct(Setting $setting, Contact $contact, NewsLetter $news){
         $this->settingModel = $setting;
+        $this->contactModel = $contact;
+        $this->newsModel = $news;
     }
 
 
@@ -44,6 +50,33 @@ class SettingRepository implements SettingInterface {
 
     public function contact($request)
     {
-        // TODO: Implement contact() method.
+        try{
+            $data = $request->except('_token');
+
+            $this->contactModel::create($data);
+
+            session()->flash('success', 'Sent message successfully');
+
+            return redirect()->back();
+
+        }catch(\Exception $e){
+            return redirect()->back()->with(['error'=>'there is problem please try again']);
+        }
+    }
+
+    public function news($request)
+    {   try{
+            $data = $request->except('_token');
+
+            $this->newsModel::create($data);
+
+            session()->flash('success', 'subscribed successfully');
+
+            return redirect()->back();
+
+        }catch(\Exception $e){
+            return redirect()->back()->with(['error'=>'there is problem please try again']);
+        }
+
     }
 }

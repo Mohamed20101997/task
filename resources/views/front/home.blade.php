@@ -39,9 +39,9 @@
                                     <div class="silder_1 sub_slider owl-carousel">
                                        @foreach($featured as $feature)
                                             <div class="wrap_silder"><a class="over_lay_slider" href="{{route('article.blog',$feature->id)}}"></a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">Featured</a></span>
-                                            <div class="wrap_img">
-                                                <img class="def_img" height="200px" src="{{$feature->image_path}}" alt="">
-                                            </div>
+
+                                                <img height="300px" src="{{$feature->image_path}}" alt="">
+
                                             <div class="wrap_info_blog"><a class="a_hover_none categore" href="{{route('article.blog',$feature->id)}}">{{$feature->category->name}}</a>
                                                 <h2><a class="a_hover_none" href="{{route('article.blog',$feature->id)}}">{{$feature->name}}</a></h2>
                                                 <ul class="list-unstyled mb-0 wrap_state">
@@ -63,7 +63,7 @@
                                         @foreach($articles as $article)
                                             <div class="wrap_silder"><a class="over_lay_slider" href="{{route('article.blog',$article->id)}}">
                                                 </a><span class="name_bdg floating shadow_bdg"><a class="a_hover_none" href="list_category.html">Recent</a></span>
-                                            <div class="wrap_img"><img class="def_img" src="{{$article->image_path}}" alt=""></div>
+                                                <img height="300px"  src="{{$article->image_path}}" alt="">
                                             <div class="wrap_info_blog"><a class="a_hover_none categore" href="a{{route('article.blog',$article->id)}}">{{$article->category->name}}</a>
                                                 <h2><a class="a_hover_none" href="{{route('article.blog',$article->id)}}">{{$article->name}}</a></h2>
                                                 <ul class="list-unstyled mb-0 wrap_state">
@@ -120,7 +120,9 @@
 
                     @foreach($trends as $trend)
                         <div class="wrap_blog">
-                        <div class="wrap_img"><a href="{{route('article.blog',$trend->id)}}"><img class="def_img" src="{{$trend->image_path}}" alt="{{$trend->name}}"></a></div>
+                        <div class="wrap_img">
+                            <a href="{{route('article.blog',$trend->id)}}"><img height="150px" src="{{$trend->image_path}}" alt="{{$trend->name}}"></a>
+                        </div>
                         <div class="wrap_info_blog"><a class="categore" href="{{route('article.list',$trend->category_id)}}">{{$trend->category->name}}</a>
                             <h2><a href="{{route('article.blog',$trend->id)}}">{{$trend->category->name}}</a></h2>
                             <ul class="list-unstyled mb-0 wrap_state">

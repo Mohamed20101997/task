@@ -5,17 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd08c67c-590d-484b-971e-62799a4a6a17" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/task.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/task.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/ContactRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/NewsRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/contact/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SettingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/SettingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Interfaces/Front/SettingInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Interfaces/Front/SettingInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Interfaces/SettingInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Interfaces/SettingInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/Front/SettingRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/Front/SettingRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Repositories/SettingRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/SettingRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_09_12_152605_create_settings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_09_12_152605_create_settings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/comments/model.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/comments/model.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/settings/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/settings/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_09_13_153216_create_contacts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_09_13_153216_create_contacts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/_side.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/_side.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/about.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/_header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,11 +184,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\analog\resources\views\dashboard" />
+      <recent name="C:\laragon\www\analog\app\Http\Requests" />
       <recent name="C:\xampp\htdocs\analog\resources\views\dashboard" />
       <recent name="C:\xampp\htdocs\analog\app\Http\Controllers\Dashboard" />
       <recent name="C:\xampp\htdocs\analog\app\Http\Interfaces" />
-      <recent name="C:\xampp\htdocs\analog\app\Http\Repositories" />
-      <recent name="C:\xampp\htdocs\analog\resources\views\front" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\analog\app\Models" />
@@ -228,6 +238,7 @@
       <workItem from="1631436947922" duration="4654000" />
       <workItem from="1631445498313" duration="18273000" />
       <workItem from="1631471720561" duration="7742000" />
+      <workItem from="1631553317272" duration="7407000" />
     </task>
     <servers />
   </component>
