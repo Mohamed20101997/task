@@ -5,27 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd08c67c-590d-484b-971e-62799a4a6a17" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/ContactRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/NewsRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/contact/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SettingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/SettingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Interfaces/Front/SettingInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Interfaces/Front/SettingInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Interfaces/SettingInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Interfaces/SettingInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/Front/SettingRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/Front/SettingRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/SettingRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/SettingRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_09_13_153216_create_contacts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_09_13_153216_create_contacts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/_side.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/_side.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Interfaces/commentInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Interfaces/CommentInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard_files/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/dashboard_files/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard_files/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/dashboard_files/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/front/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/front/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/Authors/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/authors/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/Authors/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/authors/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/Authors/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/authors/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
