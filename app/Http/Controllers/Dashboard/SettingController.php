@@ -26,5 +26,24 @@ class SettingController extends Controller
         return $this->settingInterface->edit($request);
     }
 
+    public function contact()
+    {
+        return $this->settingInterface->contact();
+    }
+
+    public function news()
+    {
+        return $this->settingInterface->news();
+    }
+
+    public function deleteNews($id)
+    {
+        return $this->settingInterface->deleteNews($id);
+    }
+    public function deleteContact($id)
+    {
+        return $this->settingInterface->deleteContact($id);
+    }
+
 
 }

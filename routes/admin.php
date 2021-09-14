@@ -35,6 +35,14 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin'], function () {
 
     Route::post('setting', 'SettingController@edit')->name('setting.edit');
 
+    Route::get('contact', 'SettingController@contact')->name('setting.contact');
+
+    Route::get('news', 'SettingController@news')->name('setting.news');
+
+    Route::post('news/delete/{id}', 'SettingController@deleteNews')->name('setting.news.delete');
+
+    Route::post('contact/delete/{id}', 'SettingController@deleteContact')->name('setting.contact.delete');
+
 });  /** End of Route Group  */
 
 

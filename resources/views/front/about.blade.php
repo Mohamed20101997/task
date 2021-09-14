@@ -28,7 +28,7 @@
                              <div class="gmap_canvas">
                                  <iframe id="gmap_canvas" width="100%" height="400" src="https://maps.google.com/maps?q=egypt&amp;t=&amp;z=7&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br>
                                  <style>.mapouter{position:relative;text-align:right;height:400px;width:100%;}</style><a href="https://www.embedgooglemap.net"></a>
-                                 <style>.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:100%;}              </style>
+                                 <style>.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:100%;}</style>
                              </div>
                          </div>
                      </div>
@@ -44,11 +44,12 @@
 
                          <form action="{{route('setting.contact')}}" method="post">
                              @csrf
+                             @method('post')
                              <!-- create by pugjs loop-->
                              <div class="wrap_filde">
-                                 <label class="req" for="#1">Company name</label>
-                                 <input type="text" name="company_name" required>
-                                 @error('company_name')
+                                 <label class="req" for="#1">Name</label>
+                                 <input type="text" name="name" required>
+                                 @error('name')
                                     <p class="text-danger">{{ $message }}</p>
                                  @enderror
                              </div>
@@ -62,8 +63,11 @@
                              </div>
                              <!-- create by pugjs loop-->
                              <div class="wrap_filde">
-                                 <label for="#3">Website</label>
-                                 <input type="url" name="website">
+                                 <label class="req"  for="#3">Subject</label>
+                                 <input type="text" name="subject" required>
+                                 @error('subject')
+                                    <p class="text-danger">{{ $message }}</p>
+                                 @enderror
                              </div>
                              <div class="wrap_filde">
                                  <label class="req" for="">Message</label>

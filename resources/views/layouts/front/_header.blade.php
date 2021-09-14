@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="{{ asset('front/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/main.css') }}">
+
+    {{-- noty --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_files/plugins/noty/noty.css') }}">
+    <script src="{{ asset('dashboard_files/plugins/noty/noty.min.js') }}"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&amp;display=swap">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -118,23 +122,14 @@
                                         @endforeach
                                     </ul>
                                     <div class="wrap_bloger">
-                                        <!-- create by sass loop-->
-                                        <div class="box_blog">
-                                            <div class="wrap_img"><a href="artical_blog.html"><img class="def_img" src="./image/blog_222.jpg" alt="" srcset=""></a></div>
-                                            <h2><a href="artical_blog.html"> The Accessibility, Hierarchy, and Organisation of a Book </a></h2><span class="date">June 6, 2019</span>
+                                        @foreach($header as $article)
+                                            <div class="box_blog">
+                                            <div class="wrap_img">
+                                                <a href="{{route('article.blog',$article->id)}}">
+                                                    <img width="150px" height="100px" src="{{$article->image_path}}" alt="{{$article->name}}" srcset=""></a></div>
+                                            <h2><a href="{{route('article.blog',$article->id)}}"> {{$article->name}} </a></h2><span class="date">{{ date("M d ,Y", strtotime($article->date)) }}</span>
                                         </div>
-                                        <div class="box_blog">
-                                            <div class="wrap_img"><a href="artical_blog.html"><img class="def_img" src="./image/blog_222.jpg" alt="" srcset=""></a></div>
-                                            <h2><a href="artical_blog.html"> The Accessibility, Hierarchy, and Organisation of a Book </a></h2><span class="date">June 6, 2019</span>
-                                        </div>
-                                        <div class="box_blog">
-                                            <div class="wrap_img"><a href="artical_blog.html"><img class="def_img" src="./image/blog_222.jpg" alt="" srcset=""></a></div>
-                                            <h2><a href="artical_blog.html"> The Accessibility, Hierarchy, and Organisation of a Book </a></h2><span class="date">June 6, 2019</span>
-                                        </div>
-                                        <div class="box_blog">
-                                            <div class="wrap_img"><a href="artical_blog.html"><img class="def_img" src="./image/blog_222.jpg" alt="" srcset=""></a></div>
-                                            <h2><a href="artical_blog.html"> The Accessibility, Hierarchy, and Organisation of a Book </a></h2><span class="date">June 6, 2019</span>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </li>
@@ -184,7 +179,7 @@
                     <div class="aside_lg_screen d-none d-lg-flex">
                         <div class="wrap_2_item">
                             <div class="wrap_logo d-flex">
-                                <img class="def_img" src="./image/fn-logo.png" alt="" srcset="">
+                                <img class="def_img" src="{{$setting->image_path}}" alt="" srcset="">
                                 <span>{{$setting->site_name}}</span>
                             </div>
                             <ul class="list-unstyled mb-0 linksMainHeader">
@@ -197,10 +192,18 @@
                                 <div class="new_sletter mb-4">
                                     <h3>Newsletter</h3>
                                     <p>Subscribe to our newsletter and get our newest updates right on your email.</p>
-                                    <form action="">
-                                        <input type="text" name="" placeholder="Your email address">
+                                    <form action="{{route('setting.news')}}" method="post">
+                                        @csrf
+                                        @method('post')
+                                        <input type="text" name="email" placeholder="Your email address" required>
+                                        @error('email')
+                                        <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                         <label for="">
-                                            <input class="v-mid" type="checkbox" name=""><a class="a_hover_none" href="#">I agree to the terms & conditions</a>
+                                            <input class="v-mid" type="checkbox" name="agree" required><a class="v-mid a_hover_none" href="#">I agree to the terms & conditions</a>
+                                            @error('agree')
+                                            <p class="text-danger">{{ $message }}</p>
+                                            @enderror
                                         </label>
                                         <button class="hover_btn">Subscribe</button>
                                     </form>
@@ -209,27 +212,31 @@
                         </div>
                         <div class="social d-block">
                             <ul class="list-unstyled mb-0">
-                                <!-- create by sass loop-->
-                                <li>
-                                    <a class="a_hover_none hover_el" href="#">
-
-                                        <i class="fab fa-facebook"></i></a></li>
-                                <li>
-                                    <a class="a_hover_none hover_el" href="#">
-
-                                        <i class="fab fa-twitter"></i></a></li>
-                                <li>
-                                    <a class="a_hover_none hover_el" href="#">
-
-                                        <i class="fab fa-instagram"></i></a></li>
-                                <li>
-                                    <a class="a_hover_none hover_el" href="#">
-
-                                        <i class="fab fa-youtube"></i></a></li>
-                                <li>
-                                    <a class="a_hover_none hover_el" href="#">
-
-                                        <i class="fab fa-linkedin"></i></a></li>
+                                @if(!empty($linkes['facebook']))
+                                    <li>
+                                        <a class="a_hover_none hover_el" href="{{ $linkes['facebook'] }}" ><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                @endif
+                                @if(!empty($linkes['twitter']))
+                                    <li>
+                                        <a class="a_hover_none hover_el" href="{{ $linkes['twitter'] }}" ><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                @endif
+                                @if(!empty($linkes['instagram']))
+                                    <li>
+                                        <a class="a_hover_none hover_el" href="{{ $linkes['instagram'] }}" ><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                @endif
+                                @if(!empty($linkes['youtube']))
+                                    <li>
+                                        <a class="a_hover_none hover_el"  href="{{$linkes['youtube'] }}"><i class="fab fa-youtube"></i></a>
+                                    </li>
+                                @endif
+                                @if(!empty($linkes['linkedin']))
+                                    <li>
+                                        <a class="a_hover_none hover_el" href="{{$linkes['linkedin'] }}"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -252,22 +259,41 @@
 <div class="form_advertise" tabIndex="-1">
     <div class="wrap_contact animation_comeFromTop">
         <p>You may easily set up a contact form with plugin that fully supported by Berg. Below is the working form demo:</p>
-        <form action="">
-            <!-- create by sass loop-->
+        <form action="{{route('setting.contact')}}" method="post">
+        @csrf
+        @method('post')
+        <!-- create by pugjs loop-->
             <div class="wrap_filde">
-                <label for="#1">Company Name</label>
-                <input type="text" name="" placeholder="techunique">
+                <label class="req" for="#1">Name</label>
+                <input type="text" name="name" required>
+                @error('name')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
             </div>
-            <!-- create by sass loop-->
+            <!-- create by pugjs loop-->
             <div class="wrap_filde">
-                <label for="#2">Email address</label>
-                <input type="email" name="" placeholder="john@example.com">
+                <label class="req" for="#2">E-Mail</label>
+                <input type="email" name="email" required>
+                @error('email')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+            <!-- create by pugjs loop-->
+            <div class="wrap_filde">
+                <label class="req"  for="#3">Subject</label>
+                <input type="text" name="subject" required>
+                @error('subject')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
             </div>
             <div class="wrap_filde">
-                <label for="">Descrption</label>
-                <textarea name="" cols="40" rows="5" placeholder="Type your message"></textarea>
+                <label class="req" for="">Message</label>
+                <textarea name="message" cols="40" rows="5" placeholder="Type your message" required></textarea>
+                @error('message')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
             </div>
-            <button class="btn">Submit</button>
+            <button class="btn">Send</button>
         </form>
     </div>
 </div>

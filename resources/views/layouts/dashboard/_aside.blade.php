@@ -9,6 +9,8 @@
   <ul class="app-menu">
 
   <li><a class="app-menu__item  {{\Request::route()->getName() == 'setting.show' ? 'active' : ''}}" href="{{ route('setting.show') }}"><i class="app-menu__icon fa fa-cogs"></i><span class="app-menu__label">Settings</span></a></li>
+  <li><a class="app-menu__item  {{\Request::route()->getName() == 'setting.contact' ? 'active' : ''}}" href="{{ route('setting.contact') }}"><i class="app-menu__icon fa fa-envelope"></i><span class="app-menu__label">Contacts Message</span></a></li>
+  <li><a class="app-menu__item  {{\Request::route()->getName() == 'setting.news' ? 'active' : ''}}" href="{{ route('setting.news') }}"><i class="app-menu__icon fa fa-envelope"></i><span class="app-menu__label">NewsLetter Emails</span></a></li>
 
   <li><a class="app-menu__item  {{\Request::route()->getName() == 'category.index' ? 'active' : ''}}" href="{{ route('category.index') }}"><i class="app-menu__icon fa fa-list-alt"></i><span class="app-menu__label">Categories</span></a></li>
 

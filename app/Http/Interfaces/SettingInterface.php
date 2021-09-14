@@ -8,4 +8,12 @@ interface SettingInterface{
 
     public function edit($request);
 
+    public function contact();
+
+    public function news();
+
+    public function deleteContact($id);
+
+    public function deleteNews($id);
+
 }

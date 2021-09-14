@@ -1,4 +1,50 @@
+<!-- start floating btn contact us-->
+<button class="btn btn_floating hover_btn"><i class="fas fa-user-headset"></i></button>
+<!-- end floating btn contact us-->
 
+<!-- start contact us-->
+<div class="contact_us" tabIndex="-1">
+    <div class="wrap_contact">
+        <p>You may easily set up a contact form with plugin that fully supported by Berg. Below is the working form demo:</p>
+        <form action="{{route('setting.contact')}}" method="post">
+        @csrf
+        @method('post')
+        <!-- create by pugjs loop-->
+            <div class="wrap_filde">
+                <label class="req" for="#1">Name</label>
+                <input type="text" name="name" required>
+                @error('name')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+            <!-- create by pugjs loop-->
+            <div class="wrap_filde">
+                <label class="req" for="#2">E-Mail</label>
+                <input type="email" name="email" required>
+                @error('email')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+            <!-- create by pugjs loop-->
+            <div class="wrap_filde">
+                <label class="req"  for="#3">Subject</label>
+                <input type="text" name="subject" required>
+                @error('subject')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="wrap_filde">
+                <label class="req" for="">Message</label>
+                <textarea name="message" cols="40" rows="5" placeholder="Type your message" required></textarea>
+                @error('message')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+            <button class="btn">Send</button>
+        </form>
+    </div>
+</div>
+<!-- end contact us-->
 <!-- start footer-->
 <footer>
     <div class="container">
