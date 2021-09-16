@@ -147,6 +147,18 @@
                     </div> {{-- end of row --}}
 
                     <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Property Rights</label>
+                                <input type="text" name="property_rights" class="form-control" value="{{ old("property_rights",isset($setting->property_rights) ? $setting->property_rights: '') }}">
+                                @error("property_rights")
+                                    <div class="text-danger">{{$message}}</div>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Term Condition</label>

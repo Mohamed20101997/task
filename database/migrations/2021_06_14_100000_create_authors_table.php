@@ -18,6 +18,7 @@ class CreateAuthorsTable extends Migration
             $table->string('name');
             $table->string('image');
             $table->text('brief');
+            $table->text('social_links')->nullable();
             $table->timestamps();
         });
     }

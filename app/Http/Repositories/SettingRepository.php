@@ -33,7 +33,7 @@ class SettingRepository implements SettingInterface {
 
     public function edit($request)
     {
-        try{
+//        try{
             $data = $request->except('_token');
             $data['social_links'] = json_encode($request->social_links);
 
@@ -64,9 +64,9 @@ class SettingRepository implements SettingInterface {
 
             return redirect()->back();
 
-        }catch(\Exception $e){
-            return redirect()->back()->with(['error'=>'there is problem please try again']);
-        }
+//        }catch(\Exception $e){
+//            return redirect()->back()->with(['error'=>'there is problem please try again']);
+//        }
 
     } // end of edit function
 

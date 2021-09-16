@@ -138,7 +138,7 @@
                     <li><a class="a_hover_none hover_el" href="#">3d calculator</a></li>
                     <li><a class="a_hover_none hover_el" href="#">community</a></li>
                 </ul>
-                <div class="copy_right text-left text-md-center">© 2021 Techunique. All rights reserved.</div>
+                <div class="copy_right text-left text-md-center">{{$setting->property_rights}}</div>
             </div>
         </div>
     </div>

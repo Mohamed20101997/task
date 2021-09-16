@@ -42,6 +42,7 @@
                             </ul>
                             <ul class="list-unstyled mb-0 wrap_social">
                                 <li>Share:</li>
+
                                 <li><a class="a_hover_none hover_el" href="#"><i class="fab fa-facebook"></i></a></li>
                                 <li><a class="a_hover_none hover_el" href="#"><i class="fab fa-twitter"></i></a></li>
                                 <li><a class="a_hover_none hover_el" href="#"><i class="fab fa-linkedin-in"></i></a></li>
@@ -54,12 +55,28 @@
                                 <h4><a class="a_hover_none hover_el" href="user_profile.html">{{$article->author->name}}</a></h4>
                                 <p>{!! $article->author->brief !!}</p>
                                 <ul class="list-unstyled mb-0 wrap_social">
-                                    <li><a class="a_hover_none hover_el" href="#"><i class="fas fa-globe-asia"></i></a></li>
-                                    <li><a class="a_hover_none hover_el" href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a class="a_hover_none hover_el" href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a class="a_hover_none hover_el" href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a class="a_hover_none hover_el" href="#"><i class="fab fa-youtube"></i></a></li>
-                                    <li><a class="a_hover_none hover_el" href="#"><i class="fab fa-linkedin"></i></a></li>
+                                    @if(!empty($linkes['facebook']))
+                                        <li><a class="a_hover_none hover_el" href="{{ $linkes['facebook'] }}"><i class="fab fa-facebook"></i></a></li>
+                                    @endif
+                                    @if(!empty($linkes['twitter']))
+                                        <li><a class="a_hover_none hover_el" href="{{ $linkes['twitter'] }}"><i class="fab fa-twitter"></i></a></li>
+                                    @endif
+
+                                    @if(!empty($linkes['instagram']))
+                                        <li><a class="a_hover_none hover_el" href="{{ $linkes['instagram'] }}"><i class="fab fa-instagram"></i></a></li>
+                                    @endif
+
+                                    @if(!empty($linkes['youtube']))
+                                        <li><a class="a_hover_none hover_el" href="{{ $linkes['youtube'] }}"><i class="fab fa-youtube"></i></a></li>
+                                    @endif
+
+                                    @if(!empty($linkes['linkedin']))
+                                        <li><a class="a_hover_none hover_el" href="{{ $linkes['linkedin'] }}"><i class="fab fa-linkedin"></i></a></li>
+                                    @endif
+
+                                    @if(!empty($linkes['gmail']))
+                                        <li><a class="a_hover_none hover_el" href="{{ $linkes['gmail'] }}"><i class="fab fa-envelope"></i></a></li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>

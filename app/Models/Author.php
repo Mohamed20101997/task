@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Author extends Model
 {
-    protected $fillable = ['name','image','brief'];
+    protected $fillable = ['name','image','brief','social_links'];
     protected $appends = ['image_path'];
 
 
