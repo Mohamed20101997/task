@@ -41,7 +41,7 @@ class AuthorRepository implements AuthorInterface {
     {
         try{
             $data = $request->except('_token');
-
+            $data['social_links'] = json_encode($request->social_links);
 
             if($request->image)
             {
@@ -67,9 +67,9 @@ class AuthorRepository implements AuthorInterface {
     public function edit($request,$id)
     {
         $author = $this->authorModel::find($id);
-
         if($author){
-            return view('dashboard.authors.edit', compact('author'));
+            $linkes = json_decode($author->social_links, true);
+            return view('dashboard.authors.edit', compact('author','linkes'));
         }else{
             return redirect()->back()->with(['error'=>'this author is not found']);
         }
@@ -83,6 +83,7 @@ class AuthorRepository implements AuthorInterface {
             $author =  $this->authorModel->find($request->id);
 
             $data = $request->except('_token');
+            $data['social_links'] = json_encode($request->social_links);
 
             if($request->has('image'))
             {
