@@ -51,11 +51,19 @@ class ArticleRepository implements ArticleInterface {
         try{
             $data = $request->except('_token');
 
+
             if($request->has('status'))
             {
                 $data['status'] = $request->status;
             }else{
                 $data['status'] = '0';
+            }
+
+            if($request->has('pinned'))
+            {
+                $data['pinned'] = $request->pinned;
+            }else{
+                $data['pinned'] = '0';
             }
 
 
@@ -99,7 +107,7 @@ class ArticleRepository implements ArticleInterface {
 
     public function update($request)
     {
-//        try{
+        try{
 
             $article =  $this->articleModel->find($request->id);
 
@@ -110,6 +118,14 @@ class ArticleRepository implements ArticleInterface {
                 $data['status'] = $request->status;
             }else{
                 $data['status'] = '0';
+            }
+
+
+            if($request->has('pinned'))
+            {
+                $data['pinned'] = $request->pinned;
+            }else{
+                $data['pinned'] = '0';
             }
 
 
@@ -131,10 +147,10 @@ class ArticleRepository implements ArticleInterface {
             session()->flash('success', 'Article Updated successfully');
 
             return redirect()->route('article.index');
-//
-//        }catch(\Exception $e){
-//            return redirect()->back()->with(['error'=>'there is problem please try again']);
-//        }
+
+        }catch(\Exception $e){
+            return redirect()->back()->with(['error'=>'there is problem please try again']);
+        }
     }
 
     public function destroy($request, $id)

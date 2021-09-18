@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="iE=edge">
+
+    <link rel="icon" href="{{$setting->icon_path}}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="{{ asset('front/css/bootstrap.css') }}">
@@ -79,8 +81,8 @@
 <!-- start header-->
 <header>
     <div class="overlay_search" tabIndex="-1">
-        <form class="wrap" action="" role="search">
-            <input type="search" name="s" placeholder="Search ...">
+        <form class="wrap" action="{{route('article.featured')}}" role="search">
+            <input type="search" name="search" placeholder="Search ...">
             <p> Hit enter to search or ESC to close.</p>
         </form>
     </div>
@@ -93,8 +95,10 @@
                     <i class="fas fa-bars btn_sm_navbar"></i>
                 </div>
                 <div class="wrap_logo d-block d-lg-flex text-center">
-                    <img class="def_img d-none d-lg-block" src="{{$setting->image_path}}" alt="" srcset="">
-                    <span>{{$setting->site_name}}</span>
+                    <a href="{{route('home')}}" style="color:#000;display: contents;text-decoration: none;">
+                        <img class="def_img d-none d-lg-block" src="{{$setting->image_path}}" alt="" srcset="">
+                        <span>{{$setting->site_name}}</span>
+                    </a>
                 </div>
                 <nav class="nav_bar" tabIndex="-1">
                     <div class="wrap_2_item">
@@ -192,7 +196,7 @@
                                 <div class="new_sletter mb-4">
                                     <h3>Newsletter</h3>
                                     <p>Subscribe to our newsletter and get our newest updates right on your email.</p>
-                                    <form action="{{route('setting.news')}}" method="post">
+                                    <form action="{{route('setting.news.Letters')}}" method="post">
                                         @csrf
                                         @method('post')
                                         <input type="text" name="email" placeholder="Your email address" required>
@@ -259,7 +263,7 @@
 <div class="form_advertise" tabIndex="-1">
     <div class="wrap_contact animation_comeFromTop">
         <p>You may easily set up a contact form with plugin that fully supported by Berg. Below is the working form demo:</p>
-        <form action="{{route('setting.contact')}}" method="post">
+        <form action="{{route('setting.contactUs')}}" method="post">
         @csrf
         @method('post')
         <!-- create by pugjs loop-->

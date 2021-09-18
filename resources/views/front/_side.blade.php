@@ -56,7 +56,7 @@ $articles = \App\Models\Article::where('status', 1)->orderBy('date','ASC')->take
                     <h2 class="_3d hover_btn"><a class="a_hover_none d-block" href="ask_me.html">3d calculator</a></h2>
                     <h3>Newsletter</h3>
                     <p>Subscribe to our newsletter and get our newest updates right on your email.</p>
-                    <form action="{{route('setting.news')}}" method="post">
+                    <form action="{{route('setting.news.Letters')}}" method="post">
                         @csrf
                         @method('post')
                         <input type="text" name="email" placeholder="Your email address" required>

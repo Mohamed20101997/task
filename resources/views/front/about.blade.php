@@ -42,9 +42,11 @@
                             {{$about->description}}
                          </p>
 
-                         <form action="{{route('setting.contact')}}" method="post">
-                             @csrf
-                             @method('post')
+                         <form action="{{route('setting.contactUs')}}" method="POST">
+
+                         @csrf
+
+                         @method('POST')
                              <!-- create by pugjs loop-->
                              <div class="wrap_filde">
                                  <label class="req" for="#1">Name</label>
@@ -76,7 +78,7 @@
                                     <p class="text-danger">{{ $message }}</p>
                                  @enderror
                              </div>
-                             <button class="btn">Send</button>
+                             <button type="submit" class="btn">Send</button>
                          </form>
                      </div>
                  </div>
@@ -127,7 +129,7 @@
                                      @endif
                                      @if(!empty($linkes['gmail']))
                                          <li>
-                                             <a class="a_hover_none" href="{{$linkes['gmail'] }}" style="background-color:rgb(202, 44, 36);"><i class="fab fa-google-plus-g"></i></a>
+                                             <a class="a_hover_none" href="mailto:{{$linkes['gmail'] }}" style="background-color:rgb(202, 44, 36);"><i class="fab fa-google-plus-g"></i></a>
                                          </li>
                                      @endif
                                  </ul>

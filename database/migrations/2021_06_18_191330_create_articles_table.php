@@ -23,6 +23,8 @@ class CreateArticlesTable extends Migration
 
             $table->tinyInteger('status')->default(0);
 
+            $table->tinyInteger('pinned')->default(0);
+
             $table->string('date');
 
 

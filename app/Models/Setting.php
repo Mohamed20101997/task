@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Storage;
 
 class Setting extends Model
 {
-    protected $fillable = ['about','address','phone','email','social_links','term_condition','privacy','site_name','logo','description','property_rights'];
+    protected $fillable = ['about','address','phone','email','social_links','term_condition','privacy','site_name','logo','icon','description','property_rights'];
 
-    protected $appends = ['image_path'];
+    protected $appends = ['image_path','icon_path'];
 
 
     public function getImagePathAttribute(){
@@ -18,9 +18,9 @@ class Setting extends Model
 
     } // end of getImagePathAttribute
 
-    public function setSocialLinksAttribute($value){
+    public function getIconPathAttribute(){
 
-        $this->social_links['gmail'] = 'mailto:' . $value;
+        return Storage::url('images/'. $this->icon);
 
     } // end of getImagePathAttribute
 

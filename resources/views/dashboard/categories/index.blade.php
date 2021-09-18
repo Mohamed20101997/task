@@ -21,7 +21,6 @@
                                 <input type="text" autofocus name="search" placeholder="search" class="form-control" value="{{ request()->search }}">
                             </div>
                         </div><!-- end of col 4 -->
-
                         <div class="col-4">
                             <button type="submit" class="btn btn-success"><i class="fa fa-search"></i>Search</button>
                             <a href="{{ route('category.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Add</a>
@@ -38,7 +37,6 @@
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>N.Of Articles</th>
-                                    <th>Image</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
@@ -49,9 +47,6 @@
                                         <td>{{ $index+1 }}</td>
                                         <td>{{ $category->name }}</td>
                                         <td><span class="badge badge-secondary p-2">{{ count($category->articles) }}</span> </td>
-                                        <td>
-                                            <img src="{{image_path($category->image)}}" id="blah" width="50px" alt="your image" height="50px">
-                                        </td>
                                         <td>
                                             <a href="{{ route('category.edit', $category->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i>Edit</a>
 
@@ -70,7 +65,7 @@
                             {{ $categories->appends(request()->query())->links() }}
 
                         @else
-                            <h3 class="alert alert-info text-center" style="font-weight: 400"><i class="fa fa-exclamation-triangle"></i> Sorry no records found</h3>
+                            <h3 class="alert alert-info text-center d-flex justify-content-center" style="margin: 0 auto; font-weight: 400"><i class="fa fa-exclamation-triangle"></i> Sorry no records found</h3>
                         @endif
                     </div> <!-- end of col-md-12 -->
                 </div> <!-- end of row -->

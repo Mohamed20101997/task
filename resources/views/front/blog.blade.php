@@ -50,7 +50,7 @@
                             </ul>
                         </div>
                         <div class="auther">
-                            <div class="wrap_user"><a href="user_profile.html"><img class="def_img" src="{{$article->author->image_path}}" alt="user"></a></div>
+                            <div class="wrap_user"><a href="user_profile.html"><img width ="50px" height =  "50px" class="def_img" src="{{$article->author->image_path}}" alt="user"></a></div>
                             <div class="wrap_user_content">
                                 <h4><a class="a_hover_none hover_el" href="user_profile.html">{{$article->author->name}}</a></h4>
                                 <p>{!! $article->author->brief !!}</p>

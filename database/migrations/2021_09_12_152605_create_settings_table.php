@@ -30,6 +30,7 @@ class CreateSettingsTable extends Migration
 
             $table->string('site_name')->nullable();
             $table->string('logo')->nullable();
+            $table->string('icon')->nullable();
             $table->string('description')->nullable();
 
             $table->timestamps();

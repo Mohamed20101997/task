@@ -29,17 +29,6 @@
                         </div>
                     </div>{{-- end of col name --}}
 
-                    <div class="col-md-6">
-                        {{-- image --}}
-                        <div class="form-group">
-                            <label>Image</label>
-                            <input type="file" name="image" class="form-control">
-                            @error('image')
-                                <div class="text-danger">{{$message}}</div>
-                            @enderror
-                        </div>
-                    </div>{{-- end of col image --}}
-
                 </div> {{-- end of row --}}
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>Add</button>

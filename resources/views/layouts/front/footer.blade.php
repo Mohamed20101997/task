@@ -6,7 +6,7 @@
 <div class="contact_us" tabIndex="-1">
     <div class="wrap_contact">
         <p>You may easily set up a contact form with plugin that fully supported by Berg. Below is the working form demo:</p>
-        <form action="{{route('setting.contact')}}" method="post">
+        <form action="{{route('setting.contactUs')}}" method="post">
         @csrf
         @method('post')
         <!-- create by pugjs loop-->

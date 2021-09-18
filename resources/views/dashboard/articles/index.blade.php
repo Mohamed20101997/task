@@ -53,6 +53,7 @@
                                     <th>Image</th>
                                     <th>Date</th>
                                     <th>Status</th>
+                                    <th>Pinned</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -74,6 +75,8 @@
 
                                         <td><span class="badge bg-secondary p-2 text-white">{{$article->status($article->status)}}</span></td>
 
+                                        <td><span class="badge bg-primary p-2 text-white">{{$article->status($article->pinned)}}</span></td>
+
                                         <td>
                                             <a href="{{ route('article.edit', $article->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i>Edit</a>
 
@@ -92,7 +95,7 @@
                             {{ $articles->appends(request()->query())->links() }}
 
                         @else
-                            <h3 class="alert alert-info text-center" style="font-weight: 400"><i class="fa fa-exclamation-triangle"></i> Sorry no records found</h3>
+                            <h3 class="alert alert-info text-center d-flex justify-content-center" style="margin: 0 auto; font-weight: 400"><i class="fa fa-exclamation-triangle"></i> Sorry no records found</h3>
                         @endif
                     </div> <!-- end of col-md-12 -->
                 </div> <!-- end of row -->

@@ -20,7 +20,9 @@ Route::group(['prefix'=>'setting/'], function () {
     Route::get('term','SettingController@term')->name('setting.term');
     Route::get('privacy','SettingController@term')->name('setting.privacy');
     Route::get('about','SettingController@about')->name('setting.about');
-    Route::post('contact','SettingController@contact')->name('setting.contact');
-    Route::post('news','SettingController@news')->name('setting.news');
+
+    Route::post('contactUs','SettingController@contact')->name('setting.contactUs');
+
+    Route::post('news/Letters','SettingController@news')->name('setting.news.Letters');
 });  /** End of Route Group  */
 

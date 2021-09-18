@@ -56,9 +56,9 @@ class HomeController extends Controller
     {
         return $this->HomeInterface->recent();
     }
-    public function featured()
+    public function featured(Request $request)
     {
-        return $this->HomeInterface->featured();
+        return $this->HomeInterface->featured($request);
     }
     public function trends()
     {

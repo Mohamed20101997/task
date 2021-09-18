@@ -10,7 +10,7 @@ use App\Models\ArticleTags;
 class Article extends Model
 {
 
- protected $fillable = ['name','description','image','category_id','admin_id','date','author_id','status'];
+ protected $fillable = ['name','description','image','category_id','admin_id','date','author_id','status','pinned'];
 
  protected $appends = ['image_path'];
 

@@ -34,17 +34,6 @@
                         </div>{{-- end of col name --}}
 
 
-                        <div class="col-md-6">
-                            {{-- image --}}
-                            <div class="form-group">
-                                <label>Image</label>
-                                <input type="file" name="image" class="form-control">
-                                @error('image')
-                                <div class="text-danger">{{$message}}</div>
-                                @enderror
-                            </div>
-                        </div>{{-- end of col image --}}
-
                     </div> {{-- end of row --}}
 
                     <div class="form-group">

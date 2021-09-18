@@ -42,12 +42,6 @@ class CategoryRepository implements CategoryInterface {
         try{
             $data = $request->except('_token');
 
-            if($request->image)
-            {
-                \Image::make($request->image)->save(storage_path('app/public/images/'. $request->image->hashName()));
-
-                $data['image'] = $request->image->hashName();
-            }
 
             $this->categoryModel->create($data);
 
@@ -81,15 +75,6 @@ class CategoryRepository implements CategoryInterface {
             $category =  $this->categoryModel->find($request->id);
             $data = $request->except('_token');
 
-            if($request->has('image'))
-            {
-                // helper_function :  for delete the previous image
-                remove_previous('public', $category);
-                \Image::make($request->image)->save(storage_path('app/public/images/'. $request->image->hashName()));
-                $data['image'] = $request->image->hashName();
-
-            } //end of if
-
             $category->update($data);
 
             session()->flash('success', 'Category Updated successfully');
@@ -112,7 +97,7 @@ class CategoryRepository implements CategoryInterface {
             }
 
             $category->delete();
-            remove_previous('public',$category);
+
             session()->flash('success', 'Category deleted successfully');
 
             return redirect()->route('category.index');

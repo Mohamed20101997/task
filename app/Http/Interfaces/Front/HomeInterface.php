@@ -13,7 +13,7 @@ interface HomeInterface{
     public function articleListTag($id);
     public function mostView();
     public function recent();
-    public function featured();
+    public function featured($request);
     public function trends();
 
 }

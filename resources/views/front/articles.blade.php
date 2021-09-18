@@ -16,8 +16,8 @@
                    @foreach($articles as $article)
                         <article>
                         <div class="wrap_img"><img class="def_img" src="{{$article->image_path}}" alt="{{$article->name}}" srcset=""></div>
-                        <div class="wrpa_info"><a class="categore" href="#">{{$article->category->name}}</a>
-                            <h2><a class="a_hover_none" href="#">{{$article->name}}</a></h2>
+                        <div class="wrpa_info"><a class="categore" href="{{route('article.list',$article->category->id)}}">{{$article->category->name}}</a>
+                            <h2><a class="a_hover_none" href="{{route('article.blog',$article->id)}}">{{$article->name}}</a></h2>
                             <ul class="list-unstyled mb-0 wrap_state">
                                 <li><span>By </span><a class="a_hover_none hover_el" href="#">{{$article->author->name}}</a></li>
                                 <li><span class="date"></span></li>
@@ -51,7 +51,8 @@
                                     <h3>Latest Posts</h3>
                                     @foreach($latest as $lat)
                                         <div class="wrap_post">
-                                        <div class="wrap_img"><a href="{{route('article.blog',$lat->id)}}"><img class="def_img" src="{{$lat->image_path}}" alt="{{$lat->name}}" srcset=""></a></div>
+                                        <div class="wrap_img">
+                                            <a href="{{route('article.blog',$lat->id)}}"><img class="def_img" src="{{$lat->image_path}}" alt="{{$lat->name}}" srcset=""></a></div>
                                         <div class="wrap_info">
                                             <h4><a class="a_hover_none hover_el" href="{{route('article.blog',$lat->id)}}">
                                                     The Accessibility, Hierarchy, and Organisation of a Book</a>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Interfaces\SettingInterface;
-use Illuminate\Http\Request;
+use App\Http\Requests\SettingRequest;
 
 class SettingController extends Controller
 {
@@ -21,7 +21,7 @@ class SettingController extends Controller
         return $this->settingInterface->index();
     }
 
-    public function edit(Request $request)
+    public function edit(SettingRequest $request)
     {
         return $this->settingInterface->edit($request);
     }

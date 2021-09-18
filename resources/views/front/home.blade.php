@@ -156,21 +156,22 @@
                 <!-- used grid system bootstap 4-->
                 <div class="col-sm-12 col-md-12 col-lg-8">
 
-                    @foreach($posts as $post)
+                    @foreach($Pinned_posts as $Pinned_post)
                         <div class="wrap_blog">
-                            <div class="wrap_img"><span class="name_bdg">Pinned</span><a href="{{route('article.blog',$post->id)}}"><img class="def_img" src="{{$post->image_path}}"  alt="" srcset=""></a></div>
-                            <div class="wrap_info"><a class="categore" href="{{route('article.list',$post->category_id)}}">{{$post->category->name}}</a>
-                                <h2 class="mb-0"><a class="a_hover_none hover_el" href="{{route('article.blog',$post->id)}}">{{$post->name}}</a></h2>
+                            <div class="wrap_img"><span class="name_bdg">Pinned</span><a href="{{route('article.blog',$Pinned_post->id)}}">
+                                    <img class="def_img" src="{{$Pinned_post->image_path}}"  alt="" srcset=""></a></div>
+                            <div class="wrap_info"><a class="categore" href="{{route('article.list',$Pinned_post->category_id)}}">{{$Pinned_post->category->name}}</a>
+                                <h2 class="mb-0"><a class="a_hover_none hover_el" href="{{route('article.blog',$Pinned_post->id)}}">{{$Pinned_post->name}}</a></h2>
                                 <ul class="list-unstyled mb-0 wrap_state">
-                                    <li><span>By </span><a class="a_hover_none" href="#">{{$post->author->name}}</a></li>
+                                    <li><span>By </span><a class="a_hover_none" href="#">{{$Pinned_post->author->name}}</a></li>
                                     <li><span class="date">{{ date("M d ,Y", strtotime($article->date)) }}</span></li>
                                     <li>
-                                        <span class="views"><i class="fas fa-chart-bar"></i> {{$post->view}} views</span>
+                                        <span class="views"><i class="fas fa-chart-bar"></i> {{$Pinned_post->view}} views</span>
                                     </li>
                                 </ul>
-                                <p class="mb-0">{{Str::limit(strip_tags($post->description),81,'...')}}</p>
+                                <p class="mb-0">{{Str::limit(strip_tags($Pinned_post->description),81,'...')}}</p>
                                 <!-- use FontAwsome Pro or Free-->
-                                <a class="read_more a_hover_none" href="{{route('article.blog',$post->id)}}"> read more <i class="fas fa-long-arrow-alt-right"></i></a>
+                                <a class="read_more a_hover_none" href="{{route('article.blog',$Pinned_post->id)}}"> read more <i class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
                         <div class="clear_fix"></div>

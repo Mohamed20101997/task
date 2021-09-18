@@ -75,12 +75,24 @@
                             </div>
                         </div> {{-- end of col authors--}}
 
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                             {{-- status --}}
                             <div class="form-group">
                                 <label>Status</label>
                                 <div class="toggle-flip">
                                     <label><input type="checkbox" value="1" name="status" data-color="success" {{$article->status == '1' ? 'checked' : ''}} >
+                                        <span class="flip-indecator" data-toggle-on="Active" data-toggle-off="Not Active"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>{{-- end of col status--}}
+
+                        <div class="col-md-2">
+                            {{-- pinned --}}
+                            <div class="form-group">
+                                <label>Pinned</label>
+                                <div class="toggle-flip">
+                                    <label><input type="checkbox" value="1" name="pinned" data-color="success" {{$article->pinned == '1' ? 'checked' : ''}} >
                                         <span class="flip-indecator" data-toggle-on="Active" data-toggle-off="Not Active"></span>
                                     </label>
                                 </div>

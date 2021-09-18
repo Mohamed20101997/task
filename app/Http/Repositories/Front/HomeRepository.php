@@ -9,6 +9,7 @@ use App\Models\ArticleView;
 use App\Models\Category;
 use App\models\Tag;
 use DB;
+use http\Env\Request;
 
 class HomeRepository implements HomeInterface{
 
@@ -32,12 +33,15 @@ class HomeRepository implements HomeInterface{
         $model      = $this->articleModel::where('status', 1);
         $articles   = $model->orderBy('date','ASC')->take(5)->get();
         $featured   = $model->take(10)->get();
+
         $posts      = $model->orderBy('date','ASC')->take(10)->get();
+
+        $Pinned_posts      = $model->orderBy('date','ASC')->where('pinned',1)->get();
 
         $trends = $this->trend(10);
         $articleTrend = $this->trend(3);
 
-        return view('front.home', compact('articles','featured','posts','trends','articleTrend'));
+        return view('front.home', compact('articles','featured','posts','trends','articleTrend','Pinned_posts'));
     }
 
 
@@ -53,13 +57,14 @@ class HomeRepository implements HomeInterface{
         $previous       =   $this->articleModel::where([['status', 1],['id','<',$article->id]])->orderBy('id','desc')->first();
 
 
-        $ip  = \Request::ip();
+        $mac  =  exec('getmac');
 
-        $articleView = $this->articleViewModel::where([['ip',$ip],['article_id',$id]])->first();
+
+        $articleView = $this->articleViewModel::where([['ip',$mac],['article_id',$id]])->first();
 
         if(!$articleView){
             $this->articleViewModel::create([
-                'ip' => $ip,
+                'ip' => $mac,
                 'article_id' => $id
             ]);
         }
@@ -143,9 +148,9 @@ class HomeRepository implements HomeInterface{
         return view('front.articles', compact('articles','name','latest'));
     }
 
-    public function featured()
+    public function featured($request)
     {
-        $articles       = $this->articleModel::where([['status', 1]])->inRandomOrder()->paginate(5);
+        $articles       = $this->articleModel::where([['status', 1]])->WhenSearch($request->search)->inRandomOrder()->paginate(5);
         $latest         =  $this->articleModel::where('status', 1)->orderBy('date','ASC')->take(5)->get();
         $name           = 'Featured';
 

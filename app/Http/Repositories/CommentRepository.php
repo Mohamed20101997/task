@@ -2,6 +2,7 @@
 
 namespace App\Http\Repositories;
 use App\Http\Interfaces\CommentInterface;
+use App\Models\Article;
 use App\Models\ArticleComment;
 
 class CommentRepository implements CommentInterface {
@@ -14,9 +15,9 @@ class CommentRepository implements CommentInterface {
 
     public function index()
     {
-        $comments = $this->commentModel::whenSearch(request()->search)->paginate(5);
-
-        return view('dashboard.comments.index',compact('comments'));
+        $comments = $this->commentModel::whenSearch(request()->search)->whenArticle(request()->article_id)->paginate(5);
+        $articles = Article::get();
+        return view('dashboard.comments.index',compact('comments','articles'));
 
     }//end of index function
 

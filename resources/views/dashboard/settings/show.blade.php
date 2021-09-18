@@ -147,7 +147,8 @@
                     </div> {{-- end of row --}}
 
                     <div class="row">
-                        <div class="col-md-12">
+
+                        <div class="col-md-8">
                             <div class="form-group">
                                 <label>Property Rights</label>
                                 <input type="text" name="property_rights" class="form-control" value="{{ old("property_rights",isset($setting->property_rights) ? $setting->property_rights: '') }}">
@@ -156,6 +157,17 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            {{--  icon --}}
+                            <div class="form-group">
+                                <label>Icon</label>
+                                <input type="file" name="icon" class="form-control">
+
+                                @error('icon')
+                                <div class="text-danger">{{$message}}</div>
+                                @enderror
+                            </div>
+                        </div>{{-- end of icon --}}
                     </div>
 
                     <div class="row">

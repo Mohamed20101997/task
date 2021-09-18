@@ -51,7 +51,7 @@
                             {{ $news->appends(request()->query())->links() }}
 
                         @else
-                            <h3 class="alert alert-info text-center" style="font-weight: 400"><i class="fa fa-exclamation-triangle"></i> Sorry no records found</h3>
+                            <h3 class="alert alert-info text-center d-flex justify-content-center" style="margin: 0 auto; font-weight: 400"><i class="fa fa-exclamation-triangle"></i> Sorry no records found</h3>
                         @endif
                     </div> <!-- end of col-md-12 -->
                 </div> <!-- end of row -->
