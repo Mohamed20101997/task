@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
 
-    <title>Analog-Dashboard</title>
+    <title>Task custom field</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
 
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_files/css/main.css') }}">
@@ -44,17 +42,21 @@
 
 <!-- Essential javascripts for application to work-->
 <script src="{{ asset('dashboard_files/js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ asset('dashboard_files/js/plugins/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('dashboard_files/js/popper.min.js') }}"></script>
 <script src="{{ asset('dashboard_files/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('dashboard_files/js/main.js') }}"></script>
 {{-- select2--}}
 <script src="{{ asset('dashboard_files/js/plugins/select2.min.js') }}"></script>
 
+{{-- custom fields --}}
+<script src="{{ asset('dashboard_files/js/plugins/form-builder.min.js') }}"></script>
+<script src="{{ asset('dashboard_files/js/plugins/form-render.min.js') }}"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 @stack('js')
-
 <script>
     $.ajaxSetup({
         headers: {
@@ -78,6 +80,9 @@
         });
     });
 </script>
+
+@yield('script')
+
 </body>
 </html>
 

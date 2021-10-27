@@ -31,6 +31,8 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin'], function () {
 
     Route::resource('comment', 'CommentController')->except('edit','store','update','create');
 
+    Route::resource('custom', 'CustomController');
+
     Route::get('setting', 'SettingController@index')->name('setting.show');
 
     Route::post('setting', 'SettingController@edit')->name('setting.edit');

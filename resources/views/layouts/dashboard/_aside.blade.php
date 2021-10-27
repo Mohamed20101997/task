@@ -22,5 +22,7 @@
 
   <li><a class="app-menu__item  {{\Request::route()->getName() == 'comment.index' ? 'active' : ''}}" href="{{ route('comment.index') }}"><i class="app-menu__icon fa fa-comments"></i><span class="app-menu__label">Comments</span></a></li>
 
+  <li><a class="app-menu__item  {{\Request::route()->getName() == 'custom.index' ? 'active' : ''}}" href="{{ route('custom.index') }}"><i class="app-menu__icon fa fa-comments"></i><span class="app-menu__label">Custom Fields</span></a></li>
+
   </ul>
 </aside>
