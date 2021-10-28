@@ -12,6 +12,14 @@
 
 <div class="row">
     <div class="col-md-12">
+        <label class="alert alert-dark" style="width: 100%">Select Model
+            <select class="form-control" id="model"  required>
+                <option value="">Choose the model</option>
+                <option value="1" name="categories">Categories</option>
+                <option value="2" name="tags">Tags</option>
+                <option value="3" name="articles">Articles</option>
+            </select>
+        </label>
 
         <div class="tile mb4">
             <div class="build-wrap" id="build-wrap"></div>
@@ -24,7 +32,6 @@
 
 @section('script')
     <script>
-
         var options = {
             disableFields:[
                 'button',
@@ -41,6 +48,10 @@
         var formBuilder = $(fbEditor).formBuilder(options);
 
         $(document).on('click','.save-template',function (){
+            var select = $('#model').find(":selected");
+            var model_name = select.text();
+            var model_id = select.val();
+
             var formData =  formBuilder.actions.getData();
             $.ajaxSetup({
                 headers: {
@@ -50,7 +61,11 @@
             $.ajax({
                 method : 'POST',
                 url: '{{route('custom.store')}}',
-                data:{'data':formData},
+                data:{
+                    'data':formData,
+                    'model_name':model_name,
+                    'model_id':model_id,
+                },
                 success: function( msg ) {
                     window.location.href = "{{route('custom.index')}}";
                 }

@@ -30,6 +30,20 @@
                     </div>{{-- end of col name --}}
 
                 </div> {{-- end of row --}}
+
+                    @component('components.Inputs.input',[
+                                'label' => 'Enter password',
+                                'type' => 'select',
+                                'values' => '[{"label":"Option 1","value":"option-1","selected":"true"},{"label":"Option 2","value":"option-2","selected":"true"},{"label":"Option 3","value":"option-3"}]',
+                                'placeholder' => 'asdsada',
+                                'selected' => true,
+                                'multiple' => true,
+                                'subtype' =>null,
+                                'name' => 'password',
+                                'required' => true,
+                            ])
+                    @endcomponent
+
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>Add</button>
                 </div>

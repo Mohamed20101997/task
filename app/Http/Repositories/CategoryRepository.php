@@ -32,6 +32,7 @@ class CategoryRepository implements CategoryInterface {
 
     public function create()
     {
+
         return view('dashboard.categories.create');
 
     } //end of create function
@@ -41,7 +42,6 @@ class CategoryRepository implements CategoryInterface {
     {
         try{
             $data = $request->except('_token');
-
 
             $this->categoryModel->create($data);
 
