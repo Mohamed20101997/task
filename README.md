@@ -11,8 +11,6 @@ for Run the Project
         :       php artisan migrate --seed
         :       php artisan cach:clear
         :       php artisan config:cache
-    imp :       create folder [images] inside [ storage->app->public ]
-        :       php artisan storage:link
         :       php artisan serv
         
 1- Dashboard url: http://127.0.0.1:8000/admin/login
