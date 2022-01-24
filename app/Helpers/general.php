@@ -14,7 +14,7 @@ function getFolder(){
 }
 
 function parent($id){
-    $paret  = \App\Models\Category::where('id', $id)->whereTranslation('locale','en')->get();
+    $paret  = \App\Models\Student::where('id', $id)->whereTranslation('locale','en')->get();
     foreach ($paret as $p)
     {
          return $p->name;

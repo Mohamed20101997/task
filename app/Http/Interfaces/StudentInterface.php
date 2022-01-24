@@ -2,7 +2,7 @@
 
 namespace App\Http\Interfaces;
 
-interface CategoryInterface{
+interface StudentInterface{
 
     public function index();
 

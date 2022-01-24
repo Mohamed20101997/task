@@ -21,29 +21,7 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin'], function () {
     //logout route
     Route::post('logout', 'AuthController@logout')->name('logout');
 
-    Route::resource('category', 'CategoryController')->except('show');
-
-    Route::resource('tag', 'TagController')->except('show');
-
-    Route::resource('author', 'AuthorController')->except('show');
-
-    Route::resource('article', 'ArticleController')->except('show');
-
-    Route::resource('comment', 'CommentController')->except('edit','store','update','create');
-
-    Route::resource('custom', 'CustomController');
-
-    Route::get('setting', 'SettingController@index')->name('setting.show');
-
-    Route::post('setting', 'SettingController@edit')->name('setting.edit');
-
-    Route::get('contact', 'SettingController@contact')->name('setting.contact');
-
-    Route::get('news', 'SettingController@news')->name('setting.news');
-
-    Route::post('news/delete/{id}', 'SettingController@deleteNews')->name('setting.news.delete');
-
-    Route::post('contact/delete/{id}', 'SettingController@deleteContact')->name('setting.contact.delete');
+    Route::resource('student', 'StudentController')->except('show');
 
 });  /** End of Route Group  */
 

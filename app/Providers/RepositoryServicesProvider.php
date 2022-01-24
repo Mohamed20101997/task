@@ -30,8 +30,8 @@ class RepositoryServicesProvider extends ServiceProvider
         );
 
         $this->app->bind(
-            'App\Http\Interfaces\CategoryInterface',
-            'App\Http\Repositories\CategoryRepository'
+            'App\Http\Interfaces\StudentInterface',
+            'App\Http\Repositories\StudentRepository'
         );
 
         $this->app->bind(

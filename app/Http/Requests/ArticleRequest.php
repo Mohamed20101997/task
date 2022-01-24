@@ -27,7 +27,7 @@ class ArticleRequest extends FormRequest
             'name'              => 'required',
             'description'       => 'required|min:10',
             'image'             => 'required|image|mimes:jpeg,jpg,png',
-            'category_id'       => 'required|exists:categories,id',
+            'category_id'       => 'required|exists:students,id',
             'tag_id'            => 'required|exists:tags,id',
             'author_id'         => 'required|exists:authors,id',
             'date'              => 'required|date',
