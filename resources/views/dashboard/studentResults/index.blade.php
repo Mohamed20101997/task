@@ -49,11 +49,6 @@
             <div class="tile mb-4">
                 <form action="">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="text" autofocus name="search" placeholder="search" class="form-control" value="{{ request()->search }}">
-                            </div>
-                        </div><!-- end of col 4 -->
                         <div class="col-4">
                             <button type="submit" class="btn btn-success"><i class="fa fa-search"></i>Search</button>
                             <a href="{{ route('student_result.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Add</a>
