@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Interfaces\StudentInterface;
-use App\Http\Requests\StudentResultRequest;
+use App\Http\Requests\StudentRequest;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -28,12 +28,12 @@ class StudentController extends Controller
         return $this->studentInterface->create();
     }
 
-    public function store(StudentResultRequest $request)
+    public function store(StudentRequest $request)
     {
         return $this->studentInterface->store($request);
     }
 
-    public function update(StudentResultRequest $request)
+    public function update(StudentRequest $request)
     {
         return $this->studentInterface->update($request);
     }

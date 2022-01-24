@@ -5,46 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fab5226d-c990-42de-8b0f-e0be57090e7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.envexample" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/StudentResultsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Interfaces/AuthInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Interfaces/StudentResultsInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Repositories/AuthRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Repositories/StudentResultsRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/studentResults/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/studentResults/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/studentResults/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/template.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/task.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/task.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CustomField.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/StudentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Repositories/StudentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/StudentRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ArticleRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ArticleUpdateRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AuthorRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AuthorUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StudentResultRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CategoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StudentRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CommentRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ContactRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/NewsRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SettingRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/TagRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServicesProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServicesProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Survey.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/SurveyResponse.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/StudentResultsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/StudentResultsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StudentRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StudentRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Imports/StudentResultImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Imports/StudentResultImport.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/partials/_confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/_confirm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/partials/_errors.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/_errors.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/partials/_sessions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/_sessions.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/studentResults/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/studentResults/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/students/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/students/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/students/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/students/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/students/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/students/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +158,7 @@
   <component name="ProjectId" id="247J2qLZ1yzJZamXjvEP8WUd6FI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -195,19 +167,25 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/template" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\task\public\template" />
       <recent name="C:\xampp\htdocs\task" />
       <recent name="C:\xampp\htdocs\task\app\Http\Requests" />
       <recent name="C:\xampp\htdocs\task\resources\views\dashboard" />
       <recent name="C:\xampp\htdocs\task\app\Http\Repositories" />
-      <recent name="C:\xampp\htdocs\task\app\Http\Interfaces" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

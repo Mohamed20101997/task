@@ -3,8 +3,10 @@
 namespace App\Http\Repositories;
 
 use App\Http\Interfaces\StudentResultsInterface;
+use App\Imports\StudentResultImport;
 use App\Models\Student;
 use App\Models\StudentResults;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class StudentResultsRepository implements StudentResultsInterface {
@@ -59,8 +61,12 @@ class StudentResultsRepository implements StudentResultsInterface {
 
     public function import($request)
     {
-        dd('import');
+        $file = $request->file('file');
 
+        Excel::import(new StudentResultImport, $file);
+
+        session()->flash('success', 'Uploaded  added successfully');
+        return redirect()->route('student_result.index');
     }//end of import function
 
 

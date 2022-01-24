@@ -4,8 +4,9 @@ namespace App\Imports;
 
 use App\Models\StudentResults;
 use Maatwebsite\Excel\Concerns\ToModel;
-
-class StudentResultImport implements ToModel
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithValidation;
+class StudentResultImport implements ToModel,WithHeadingRow,WithValidation
 {
     /**
     * @param array $row
@@ -15,9 +16,18 @@ class StudentResultImport implements ToModel
     public function model(array $row)
     {
         return new StudentResults([
-            'student_id' => $row[0],
-            'grade' => $row[1],
-            'seating_number' => $row[2],
+            'student_id' => $row['student_id'],
+            'grade' => $row['grade'],
+            'seating_number' => $row['seating_number'],
         ]);
+    }
+
+    public function rules(): array
+    {
+        return [
+            'student_id'            => 'required|integer|exists:students,id|unique:student_results,student_id',
+            'grade'                 => 'required|integer',
+            'seating_number'        => 'required|unique:student_results,seating_number',
+        ];
     }
 }
