@@ -23,6 +23,10 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin'], function () {
 
     Route::resource('student', 'StudentController')->except('show');
 
+    Route::resource('student_result', 'StudentResultsController')->except('show');
+
+    Route::post('import', 'StudentResultsController@import')->name('import');
+
 });  /** End of Route Group  */
 
 

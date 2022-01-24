@@ -63,7 +63,7 @@ class StudentRepository implements StudentInterface {
         if($student){
             return view('dashboard.students.edit', compact('student'));
         }else{
-            return redirect()->back()->with(['error'=>'this employee is not found']);
+            return redirect()->back()->with(['error'=>'this student is not found']);
         }
 
     } //end of edit function

@@ -20,45 +20,16 @@ class RepositoryServicesProvider extends ServiceProvider
         );
 
         $this->app->bind(
-            'App\Http\Interfaces\ArticleInterface',
-            'App\Http\Repositories\ArticleRepository'
-        );
-
-        $this->app->bind(
-            'App\Http\Interfaces\AuthorInterface',
-            'App\Http\Repositories\AuthorRepository'
-        );
-
-        $this->app->bind(
             'App\Http\Interfaces\StudentInterface',
             'App\Http\Repositories\StudentRepository'
         );
 
         $this->app->bind(
-            'App\Http\Interfaces\CommentInterface',
-            'App\Http\Repositories\CommentRepository'
+            'App\Http\Interfaces\StudentResultsInterface',
+            'App\Http\Repositories\StudentResultsRepository'
         );
 
-        $this->app->bind(
-            'App\Http\Interfaces\Front\SettingInterface',
-            'App\Http\Repositories\Front\SettingRepository'
-        );
-        $this->app->bind(
-            'App\Http\Interfaces\SettingInterface',
-            'App\Http\Repositories\SettingRepository'
-        );
 
-        $this->app->bind(
-            'App\Http\Interfaces\TagInterface',
-            'App\Http\Repositories\TagRepository'
-        );
-
-        ///////////////////////// For End User //////////////////
-
-      $this->app->bind(
-            'App\Http\Interfaces\Front\HomeInterface',
-            'App\Http\Repositories\Front\HomeRepository'
-        );
 
     }
 
