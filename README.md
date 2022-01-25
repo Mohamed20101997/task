@@ -17,4 +17,3 @@ for Run the Project
     email       : admin@admin.com
     password    : password
     
-2- EndUser url: http://127.0.0.1:8000/
